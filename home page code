@@ -1,0 +1,551 @@
+<!-- ============================================================
+BATROUN RACE HOME — WIDE PRO TEMPLATE (KEEP NAVY/AQUA COLORS)
+FINAL VERSION: fixed links + autoplay highlights slider + clean structure
+Scoped for Shopify (no :root, no body)
+=============================================================== -->
+<style>
+    #br-homeWide{
+      --navy:#0c1426;--navy2:#0e1a33;--aqua:#3dd6c6;--aqua2:#21b3a7;
+      --ink:#e9f2ff;--muted:#9aa6b2;
+      --line:rgba(255,255,255,.14);
+      --card:rgba(8,18,37,.78);
+      --card2:rgba(8,18,37,.55);
+      --shadow:0 32px 90px rgba(0,0,0,.65);
+
+      width:100vw; position:relative; left:50%; right:50%;
+      margin-left:-50vw; margin-right:-50vw;
+
+      background:
+        radial-gradient(1100px 740px at 12% -10%, rgba(61,214,198,.16), transparent 65%),
+        radial-gradient(1200px 820px at 92% 120%, rgba(33,179,167,.12), transparent 60%),
+        linear-gradient(180deg,var(--navy),var(--navy2));
+      padding:64px 20px 96px;
+      font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto;
+      color:var(--ink);
+      isolation:isolate;
+      overflow:hidden;
+    }
+    #br-homeWide *{box-sizing:border-box}
+    #br-homeWide .wrap{max-width:1300px;margin:0 auto;position:relative;z-index:2}
+
+    #br-homeWide:before{
+      content:""; position:absolute; inset:0;
+      background:radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 1.8px);
+      background-size:34px 34px;
+      opacity:.12;
+      mask-image:radial-gradient(900px 620px at 50% 10%, #000 55%, transparent 92%);
+      pointer-events:none;
+    }
+
+    #br-homeWide h1,#br-homeWide h2,#br-homeWide h3{margin:0 0 10px;font-weight:950;color:#fff}
+    #br-homeWide h1{font-size:clamp(40px,5vw,64px);line-height:1.05}
+    #br-homeWide h2{font-size:clamp(22px,3.2vw,40px)}
+    #br-homeWide h3{font-size:1.1rem;color:var(--aqua)}
+    #br-homeWide p{margin:0 0 10px;color:rgba(233,242,255,.82)}
+    #br-homeWide a{text-decoration:none;color:inherit}
+
+    .hr{
+      height:1px;margin:38px 0;
+      background:linear-gradient(90deg,transparent,rgba(61,214,198,.75),transparent);
+      border-radius:1px
+    }
+
+    /* HERO */
+    .hero{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid;
+      gap:0;
+    }
+    @media(min-width:980px){ .hero{grid-template-columns:1.25fr .75fr;} }
+
+   #br-homeWide .heroMedia{position:relative;min-height:440px;background:#000;overflow:hidden}
+
+#br-homeWide .heroMedia img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  filter:saturate(1.05) contrast(1.02);
+}
+@media (max-width: 979px){
+  #br-homeWide .heroMedia{min-height:56svh;}
+  #br-homeWide .heroMedia img{object-position:center 35%;}
+}
+
+    .heroMedia:after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(12,20,38,.92));
+      pointer-events:none;
+    }
+
+    .heroBody{
+      padding:22px;
+      display:flex;flex-direction:column;justify-content:center;gap:12px;
+      background:
+        radial-gradient(circle at 0 0, rgba(61,214,198,.16), transparent 55%),
+        radial-gradient(circle at 100% 110%, rgba(33,179,167,.10), transparent 60%),
+        var(--card);
+      border-left:1px solid rgba(255,255,255,.10);
+    }
+    @media(max-width:979px){ .heroBody{border-left:0;border-top:1px solid rgba(255,255,255,.10)} }
+
+    .kicker{
+      display:flex;align-items:center;gap:10px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-weight:950;font-size:.82rem;
+      color:rgba(233,242,255,.9);
+    }
+    .kicker:before{
+      content:"";
+      width:10px;height:10px;border-radius:50%;
+      background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+      box-shadow:0 0 0 6px rgba(61,214,198,.14);
+    }
+    .headline{
+      background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+      -webkit-background-clip:text;background-clip:text;
+      color:transparent;
+      text-shadow:0 0 20px rgba(61,214,198,.25);
+    }
+    .sub{max-width:720px;color:#d6e5f8}
+
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:13px 18px;border-radius:14px;
+      border:1px solid rgba(61,214,198,.55);
+      font-weight:950;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+      color:#061218;
+      box-shadow:0 22px 48px rgba(61,214,198,.35);
+      border-color:transparent;
+    }
+    .btn.primary:hover{transform:translateY(-2px); box-shadow:0 30px 70px rgba(61,214,198,.55)}
+    .btn.outline{background:transparent;color:var(--ink)}
+    .btn.outline:hover{background:rgba(61,214,198,.12)}
+
+    .quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .chip{
+      padding:10px 14px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.03);
+      color:var(--ink);
+      font-weight:900;font-size:.9rem;
+    }
+    .chip:hover{background:rgba(255,255,255,.07)}
+
+    /* ===== Highlights slider ===== */
+    .slider{
+      position:relative;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 18px 70px rgba(0,0,0,.45);
+    }
+    .slides{
+      display:flex;gap:14px;
+      padding:16px;
+      overflow:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(61,214,198,.55) transparent;
+    }
+    .slides::-webkit-scrollbar{height:10px}
+    .slides::-webkit-scrollbar-thumb{background:rgba(61,214,198,.40);border-radius:999px}
+    .slide{
+      min-width:min(820px,92vw);
+      scroll-snap-align:start;
+      border-radius:18px;
+      background:
+        radial-gradient(700px 320px at 20% 0%, rgba(61,214,198,.14), transparent 60%),
+        radial-gradient(700px 320px at 90% 120%, rgba(33,179,167,.10), transparent 60%),
+        var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      padding:18px;
+      display:grid;
+      gap:10px;
+    }
+    .label{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(61,214,198,.22);
+      background:rgba(61,214,198,.10);
+      color:var(--ink);
+      font-weight:950;font-size:.78rem;
+      width:max-content;
+    }
+    .media{
+      margin-top:6px;border-radius:16px;overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+    }
+    .media img{width:100%;height:340px;object-fit:cover;display:block}
+    @media(max-width:640px){ .media img{height:240px} }
+
+    .navBtn{
+      position:absolute; top:14px;
+      width:40px;height:40px;border-radius:14px;
+      display:grid;place-items:center;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(8,18,37,.72);
+      color:var(--ink);
+      cursor:pointer;
+      transition:transform .18s ease, border-color .18s ease, background .18s ease;
+      z-index:3;
+    }
+    .navBtn:hover{transform:translateY(-2px); border-color:rgba(61,214,198,.7); background:rgba(61,214,198,.08)}
+    .navPrev{right:62px}
+    .navNext{right:14px}
+
+    /* ===== Tabs ===== */
+    .tabs{
+      display:flex;flex-wrap:nowrap;gap:10px;
+      overflow:auto;-webkit-overflow-scrolling:touch;
+      padding:10px 2px;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(61,214,198,.55) transparent;
+    }
+    .tabs::-webkit-scrollbar{height:10px}
+    .tabs::-webkit-scrollbar-thumb{background:rgba(61,214,198,.40);border-radius:999px}
+    .tab{
+      flex:0 0 auto;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      color:var(--ink);
+      padding:10px 14px;border-radius:999px;
+      font-weight:950;font-size:.9rem;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .tab[aria-selected="true"]{
+      background:rgba(61,214,198,.12);
+      border-color:rgba(61,214,198,.7);
+    }
+
+    /* ===== Blocks + cards ===== */
+    .catBlock{
+      margin-top:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.02);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:0 18px 70px rgba(0,0,0,.35);
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(61,214,198,.22);
+      background:rgba(61,214,198,.10);
+      color:var(--ink);
+      font-weight:950;font-size:.78rem;
+      width:max-content;
+      margin-bottom:8px;
+    }
+
+    .wideGrid{display:grid;gap:14px}
+    @media(min-width:980px){ .wideGrid{grid-template-columns:1fr 1fr;gap:16px} }
+
+    .cardWide{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 18px 70px rgba(0,0,0,.45);
+      transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+      display:grid;
+      grid-template-columns:160px 1fr;
+      min-height:170px;
+    }
+    .cardWide:hover{
+      transform:translateY(-3px);
+      border-color:rgba(61,214,198,.7);
+      box-shadow:0 26px 90px rgba(61,214,198,.16);
+    }
+    @media(max-width:520px){ .cardWide{grid-template-columns:1fr} }
+
+    .thumb{position:relative;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.10)}
+    @media(max-width:520px){ .thumb{border-right:0;border-bottom:1px solid rgba(255,255,255,.10)} }
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.35));pointer-events:none}
+
+    .body{padding:16px 16px 14px}
+    .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+    .tag{
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(61,214,198,.18);
+      background:rgba(61,214,198,.10);
+      color:var(--ink);
+      font-weight:950;font-size:.76rem;
+    }
+
+    /* Sponsors */
+    .sponsorTrack{
+      display:flex;gap:12px;overflow:auto;
+      padding:10px 6px 6px;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(61,214,198,.45) transparent;
+    }
+    .sponsorTrack::-webkit-scrollbar{height:10px}
+    .sponsorTrack::-webkit-scrollbar-thumb{background:rgba(61,214,198,.35);border-radius:999px}
+    .sTile{
+      flex:0 0 auto;
+      width:120px;height:120px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:8px;
+      padding:12px;
+      transition:.2s;
+      text-align:center;
+    }
+    .sTile:hover{transform:translateY(-3px);border-color:rgba(61,214,198,.7)}
+    .sTile img{width:70%;height:60%;object-fit:contain;filter:grayscale(100%) brightness(.95);opacity:.9;transition:.2s}
+    .sTile:hover img{filter:none;opacity:1}
+    .sName{font-size:.82rem;font-weight:950;color:rgba(233,242,255,.9);line-height:1.1}
+
+    /* Map */
+    .mapBox{
+      border-radius:22px; overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 70px rgba(0,0,0,.35);
+      background:rgba(255,255,255,.02);
+      height:min(560px,70vh);
+    }
+    .mapBox iframe{width:100%;height:100%;border:0}
+
+    /* footer CTA */
+    .footCTA{
+      margin-top:36px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 18px 70px rgba(0,0,0,.45);
+      text-align:center;
+    }
+
+    @media(max-width:768px){
+      #br-homeWide{padding:44px 16px 86px}
+      .slide{min-width:92vw}
+      .navPrev{right:58px}
+    }
+  </style>
+<section id="br-homeWide" aria-label="Batroun Race 2026 Home">
+<div class="wrap">
+<!-- HERO --><header class="hero" aria-label="Batroun Race 2026 hero">
+<div class="heroMedia"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Batroun_Race_Start_Line_Energy_Arch.jpg?v=1767793712" alt="Batroun Race 2026 - Coastal Run"></div>
+<div class="heroBody">
+<div class="kicker">Official • 2026 • Batroun, Lebanon</div>
+<h1 class="headline">Batroun Race 2026</h1>
+<p class="sub">Run the Coast. Feel the Pulse. A seaside race celebrating community, wellness, and Lebanese spirit.</p>
+<div class="cta">
+<a class="btn primary" href="https://www.batrounrace.com/pages/registration">Register Now</a> <a class="btn outline" href="https://www.batrounrace.com/pages/about-batroun-race">About Us</a>
+</div>
+<div class="quick" aria-label="Quick links">
+<a class="chip" href="https://www.batrounrace.com/pages/entry-list-batrounrace">Entry List</a> <a class="chip" href="https://www.batrounrace.com/pages/batroun-race-2025-winners-official-podium-result">Results</a> <a class="chip" href="https://www.batrounrace.com/pages/about-batroun-race">About</a> <a class="chip" href="https://www.batrounrace.com/pages/contact">Contact</a>
+</div>
+</div>
+</header>
+<div class="hr"><br></div>
+<!-- HIGHLIGHTS SLIDER -->
+<section aria-label="Highlights">
+<div class="slider" id="brHomeSlider">
+<button class="navBtn navPrev" type="button" aria-label="Previous highlight">‹</button> <button class="navBtn navNext" type="button" aria-label="Next highlight">›</button>
+<div class="slides" id="brHomeSlides">
+<article class="slide"><span class="label">Route • Scenic</span>
+<h3>Scenic Coastal Route</h3>
+<p>Run along Batroun’s beautiful shoreline from Hangloose to Koubba and back — safe, well-marked, unforgettable.</p>
+<div class="media"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932" alt="Scenic Coastal Route Batroun"></div>
+</article>
+<article class="slide"><span class="label">Hydration • Safety</span>
+<h3>Hydration &amp; Safety</h3>
+<p>With Aquafina and Gatorade stations, plus medical support teams, every runner stays energized and safe.</p>
+<div class="media"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/HANG_LOOSe2.jpg?v=1760000516" alt="Hydration station"></div>
+</article>
+<article class="slide"><span class="label">Community • Energy</span>
+<h3>Community Energy</h3>
+<p>Local businesses, families, and volunteers make the Batroun Race a celebration of unity and movement.</p>
+<div class="media"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/race_day.jpg?v=1760001249" alt="Community cheering"></div>
+</article>
+</div>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- TABS -->
+<section aria-label="Browse sections">
+<h2>Explore Batroun Race</h2>
+<p class="sub">Tap a category to jump to the section.</p>
+<div class="tabs" role="tablist" aria-label="Home categories">
+<button class="tab" type="button" role="tab" aria-selected="true" data-jump="route">Route</button> <button class="tab" type="button" role="tab" aria-selected="false" data-jump="safety">Safety</button> <button class="tab" type="button" role="tab" aria-selected="false" data-jump="community">Community</button> <button class="tab" type="button" role="tab" aria-selected="false" data-jump="sponsors">Sponsors</button> <button class="tab" type="button" role="tab" aria-selected="false" data-jump="map">Map</button> <button class="tab" type="button" role="tab" aria-selected="false" data-jump="contact">Contact</button>
+</div>
+<!-- ROUTE -->
+<section class="catBlock" id="brCat-route" aria-label="Route"><span class="badge">Route</span>
+<div class="wideGrid">
+<article class="cardWide">
+<div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932" alt="Scenic Coastal Route Batroun"></div>
+<div class="body">
+<div class="tagrow">
+<span class="tag">Coast</span><span class="tag">Batroun</span><span class="tag">Unforgettable</span>
+</div>
+<h3>Scenic Coastal Route</h3>
+<p>Run along Batroun’s beautiful shoreline from Hangloose to Koubba and back. Safe, well-marked, unforgettable.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- SAFETY -->
+<section class="catBlock" id="brCat-safety" aria-label="Hydration and Safety"><span class="badge">Hydration &amp; Safety</span>
+<div class="wideGrid">
+<article class="cardWide">
+<div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/HANG_LOOSe2.jpg?v=1760000516" alt="Hydration station"></div>
+<div class="body">
+<div class="tagrow">
+<span class="tag">Aquafina</span><span class="tag">Gatorade</span><span class="tag">Medical Support</span>
+</div>
+<h3>Hydration &amp; Safety</h3>
+<p>Stations + support teams keep every runner energized and safe from start to finish.</p>
+<div class="cta"><a class="btn outline" href="https://www.batrounrace.com/pages/contact">Ask a Question</a></div>
+</div>
+</article>
+</div>
+</section>
+<!-- COMMUNITY -->
+<section class="catBlock" id="brCat-community" aria-label="Community"><span class="badge">Community</span>
+<div class="wideGrid">
+<article class="cardWide">
+<div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/race_day.jpg?v=1760001249" alt="Community cheering"></div>
+<div class="body">
+<div class="tagrow">
+<span class="tag">Volunteers</span><span class="tag">Families</span><span class="tag">Unity</span>
+</div>
+<h3>Community Energy</h3>
+<p>Local businesses, families, and volunteers make Batroun Race a celebration of unity and movement.</p>
+<div class="cta"><a class="btn outline" href="https://www.batrounrace.com/pages/contact#contact-form">Volunteer</a></div>
+</div>
+</article>
+</div>
+</section>
+<!-- SPONSORS -->
+<section class="catBlock" id="brCat-sponsors" aria-label="Sponsors"><span class="badge">Sponsors</span>
+<h2 style="margin-top: 4px;">Official Sponsors of the Batroun Race  2 June 2025</h2>
+<p class="sub">Maximum exposure, measurable impact. Each sponsor helps make Batroun Race unforgettable.</p>
+<div class="sponsorTrack" id="beltSponsors" aria-label="Sponsor logos"></div>
+</section>
+<!-- MAP -->
+<section class="catBlock" id="brCat-map" aria-label="Map"><span class="badge">Location</span>
+<h2 style="margin-top: 4px;">Find Batroun</h2>
+<p class="sub">Plan your route and meet us by the coast.</p>
+<div class="mapBox"><iframe loading="lazy" title="Batroun map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.303126056065!2d35.655!3d34.255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15222377aa2222df%3A0x3b4e712345678!2sBatroun!5e0!3m2!1sen!2slb!4v1700000000000"></iframe></div>
+</section>
+<!-- CONTACT -->
+<section class="footCTA" id="brCat-contact" aria-label="Contact">
+<h2>Plan Your Race Day</h2>
+<p>Need help with registration, travel, or sponsorship? Contact our team — we reply fast!</p>
+<div class="cta" style="justify-content: center;"><a class="btn primary" href="https://www.batrounrace.com/pages/contact">Contact Us</a></div>
+<p style="opacity: .75; margin-top: 14px;">© <span id="brYear"></span> Batroun Race | Run the Coast, Feel the Pulse</p>
+</section>
+</section>
+</div>
+<script>
+    (function(){
+      const root=document.querySelector('#br-homeWide');
+      if(!root) return;
+
+      // Year
+      const y=root.querySelector('#brYear');
+      if(y) y.textContent=new Date().getFullYear();
+
+      // Slider arrows + AUTOPLAY (loop + pause on hover/touch)
+      const track=root.querySelector('#brHomeSlides');
+      const prev=root.querySelector('#brHomeSlider .navPrev');
+      const next=root.querySelector('#brHomeSlider .navNext');
+
+      let autoTimer=null;
+      const AUTO_MS=3800;
+
+      function scrollByOne(dir){
+        const first=track?.querySelector('.slide');
+        const w=first ? first.getBoundingClientRect().width : 680;
+        track.scrollBy({left:dir*(w+14),behavior:'smooth'});
+      }
+      function stopAuto(){ if(autoTimer){ clearInterval(autoTimer); autoTimer=null; } }
+      function startAuto(){
+        if(!track) return;
+        stopAuto();
+        autoTimer=setInterval(()=>{
+          const max=track.scrollWidth-track.clientWidth-5;
+          if(track.scrollLeft>=max) track.scrollTo({left:0,behavior:'smooth'});
+          else scrollByOne(1);
+        },AUTO_MS);
+      }
+
+      if(track && prev && next){
+        prev.addEventListener('click',()=>{scrollByOne(-1); startAuto();});
+        next.addEventListener('click',()=>{scrollByOne(1); startAuto();});
+
+        const slider=root.querySelector('#brHomeSlider');
+        slider?.addEventListener('mouseenter',stopAuto);
+        slider?.addEventListener('mouseleave',startAuto);
+        track.addEventListener('touchstart',stopAuto,{passive:true});
+        track.addEventListener('touchend',startAuto,{passive:true});
+
+        startAuto();
+      }
+
+      // Tabs smooth scroll
+      const tabs=root.querySelectorAll('.tab');
+      tabs.forEach(t=>{
+        t.addEventListener('click',()=>{
+          tabs.forEach(x=>x.setAttribute('aria-selected','false'));
+          t.setAttribute('aria-selected','true');
+          const key=t.getAttribute('data-jump');
+          const target=root.querySelector('#brCat-'+key);
+          if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      });
+
+      // Sponsors data
+      const sponsors=[
+        {name:"Aquafina",url:"https://www.aquafina.com/en-US/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/AQUAFINA.jpg?v=1759775548"},
+        {name:"Gatorade",url:"https://www.gatorade.com",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/GATORADE.jpg?v=1759775585"},
+        {name:"XXL Energy",url:"https://www.facebook.com/XXLEnergyLB/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/XXL_ENERY.jpg?v=1759775742"},
+        {name:"Lebtivity",url:"https://www.lebtivity.com",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/lebtivity.jpg?v=1759775471"},
+        {name:"Whish Money",url:"https://whishmoneylebanon.com/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Whish_MoNEY.jpg?v=1759775521"},
+        {name:"Footlab",url:"#",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/FOOTLAB.jpg?v=1759775398"},
+        {name:"Blue Bay",url:"https://blubaybatroun.com/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/BLUE_BAY.jpg?v=1759775706"},
+        {name:"Studio Jammal",url:"https://gobatroun.com/location/studio-jammal-s-a-r-l/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/STUDIO_JAMMAL.jpg?v=1759775659"},
+        {name:"Batroun Mountains",url:"http://batrounmountains.wine/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/BATROUN_MOUNTAINS.jpg?v=1760902144"},
+        {name:"Merk",url:"https://merk-me.com/",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/merK.jpg?v=1759775425"},
+        {name:"Khoury Shopping Center",url:"#",logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/KHOURY_SHOPPING_CENETER.jpg?v=1759775370"}
+      ];
+
+      const belt=root.querySelector('#beltSponsors');
+      if(belt){
+        belt.innerHTML="";
+        sponsors.forEach(s=>{
+          const a=document.createElement('a');
+          a.className='sTile';
+          a.href=s.url||'#';
+          a.target='_blank';
+          a.rel='noopener';
+          a.innerHTML=`<img src="${s.logo}" alt="${s.name}" loading="lazy"><div class="sName">${s.name}</div>`;
+          belt.appendChild(a);
+        });
+      }
+    })();
+  </script></section>
