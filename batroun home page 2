@@ -1,0 +1,758 @@
+<!-- ============================================================
+BATROUN RACE — PRO HOME TEMPLATE (Navy/Aqua)
+Shopify safe (scoped), modern sections, KPI counters, accordions,
+sponsor strip, smooth-scroll, polished structure.
+=============================================================== -->
+<style>
+  #br-proHome{
+    --navy:#0c1426; --navy2:#0e1a33;
+    --aqua:#3dd6c6; --aqua2:#21b3a7;
+    --ink:#e9f2ff; --muted:#9aa6b2;
+    --line:rgba(255,255,255,.14);
+    --card:rgba(8,18,37,.78);
+    --card2:rgba(8,18,37,.55);
+    --shadow:0 32px 90px rgba(0,0,0,.65);
+
+    width:100vw; position:relative; left:50%; right:50%;
+    margin-left:-50vw; margin-right:-50vw;
+
+    background:
+      radial-gradient(1100px 740px at 12% -10%, rgba(61,214,198,.16), transparent 65%),
+      radial-gradient(1200px 820px at 92% 120%, rgba(33,179,167,.12), transparent 60%),
+      linear-gradient(180deg,var(--navy),var(--navy2));
+    padding:64px 20px 96px;
+    font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto;
+    color:var(--ink);
+    isolation:isolate;
+    overflow:hidden;
+  }
+  #br-proHome *{box-sizing:border-box}
+  #br-proHome a{color:inherit;text-decoration:none}
+  #br-proHome img{max-width:100%;display:block}
+  #br-proHome .wrap{max-width:1300px;margin:0 auto;position:relative;z-index:2}
+
+  /* soft grid texture */
+  #br-proHome:before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 1.8px);
+    background-size:34px 34px;
+    opacity:.12;
+    mask-image:radial-gradient(900px 620px at 50% 10%, #000 55%, transparent 92%);
+    pointer-events:none;
+  }
+
+  #br-proHome h1,#br-proHome h2,#br-proHome h3{margin:0 0 10px;font-weight:950;color:#fff}
+  #br-proHome h1{font-size:clamp(40px,5vw,64px);line-height:1.05}
+  #br-proHome h2{font-size:clamp(22px,3.2vw,40px)}
+  #br-proHome h3{font-size:1.1rem;color:var(--aqua)}
+  #br-proHome p{margin:0 0 10px;color:rgba(233,242,255,.82)}
+
+  #br-proHome .hr{
+    height:1px;margin:38px 0;
+    background:linear-gradient(90deg,transparent,rgba(61,214,198,.75),transparent);
+    border-radius:1px
+  }
+
+  /* buttons */
+  #br-proHome .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+  #br-proHome .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:13px 18px;border-radius:14px;
+    border:1px solid rgba(61,214,198,.55);
+    font-weight:950;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    cursor:pointer;
+    user-select:none;
+  }
+  #br-proHome .btn.primary{
+    background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+    color:#061218;
+    box-shadow:0 22px 48px rgba(61,214,198,.35);
+    border-color:transparent;
+  }
+  #br-proHome .btn.primary:hover{transform:translateY(-2px); box-shadow:0 30px 70px rgba(61,214,198,.55)}
+  #br-proHome .btn.outline{background:transparent;color:var(--ink)}
+  #br-proHome .btn.outline:hover{background:rgba(61,214,198,.12)}
+  #br-proHome .btn.ghost{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.03)}
+  #br-proHome .btn.ghost:hover{background:rgba(255,255,255,.07)}
+
+  /* badge + chips */
+  #br-proHome .kicker{
+    display:flex;align-items:center;gap:10px;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-weight:950;font-size:.82rem;
+    color:rgba(233,242,255,.9);
+  }
+  #br-proHome .kicker:before{
+    content:"";
+    width:10px;height:10px;border-radius:50%;
+    background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+    box-shadow:0 0 0 6px rgba(61,214,198,.14);
+  }
+  #br-proHome .headline{
+    background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;
+    text-shadow:0 0 20px rgba(61,214,198,.25);
+  }
+  #br-proHome .sub{max-width:860px;color:#d6e5f8}
+  #br-proHome .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  #br-proHome .chip{
+    padding:10px 14px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.03);
+    color:var(--ink);
+    font-weight:900;font-size:.9rem;
+  }
+  #br-proHome .chip:hover{background:rgba(255,255,255,.07)}
+
+  /* HERO */
+  #br-proHome .hero{
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.03);
+    border-radius:26px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:grid;
+    gap:0;
+  }
+  @media(min-width:980px){ #br-proHome .hero{grid-template-columns:1.2fr .8fr;} }
+  #br-proHome .heroMedia{position:relative;min-height:460px;background:#000;overflow:hidden}
+  #br-proHome .heroMedia img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover; object-position:center;
+    filter:saturate(1.05) contrast(1.02);
+  }
+  @media (max-width: 979px){
+    #br-proHome .heroMedia{min-height:56svh;}
+    #br-proHome .heroMedia img{object-position:center 35%;}
+  }
+  #br-proHome .heroMedia:after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(12,20,38,.92));
+    pointer-events:none;
+  }
+  #br-proHome .heroBody{
+    padding:22px;
+    display:flex;flex-direction:column;justify-content:center;gap:12px;
+    background:
+      radial-gradient(circle at 0 0, rgba(61,214,198,.16), transparent 55%),
+      radial-gradient(circle at 100% 110%, rgba(33,179,167,.10), transparent 60%),
+      var(--card);
+    border-left:1px solid rgba(255,255,255,.10);
+  }
+  @media(max-width:979px){ #br-proHome .heroBody{border-left:0;border-top:1px solid rgba(255,255,255,.10)} }
+
+  /* sticky nav */
+  #br-proHome .miniNavWrap{position:sticky; top:10px; z-index:10; margin-top:18px}
+  #br-proHome .miniNav{
+    display:flex; gap:10px; flex-wrap:nowrap;
+    overflow:auto; -webkit-overflow-scrolling:touch;
+    padding:10px 12px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(8,18,37,.65);
+    backdrop-filter: blur(8px);
+    border-radius:16px;
+    box-shadow:0 18px 70px rgba(0,0,0,.35);
+    scrollbar-width:thin;
+    scrollbar-color:rgba(61,214,198,.45) transparent;
+  }
+  #br-proHome .miniNav::-webkit-scrollbar{height:10px}
+  #br-proHome .miniNav::-webkit-scrollbar-thumb{background:rgba(61,214,198,.35);border-radius:999px}
+  #br-proHome .miniBtn{
+    flex:0 0 auto;
+    padding:10px 14px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.03);
+    font-weight:950;font-size:.9rem;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:.18s;
+  }
+  #br-proHome .miniBtn:hover{border-color:rgba(61,214,198,.7); background:rgba(61,214,198,.10)}
+  #br-proHome .miniBtn.isActive{border-color:rgba(61,214,198,.75); background:rgba(61,214,198,.14)}
+
+  /* section shell */
+  #br-proHome .block{
+    margin-top:22px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.02);
+    border-radius:22px;
+    padding:18px;
+    box-shadow:0 18px 70px rgba(0,0,0,.35);
+  }
+  #br-proHome .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.22);
+    background:rgba(61,214,198,.10);
+    color:var(--ink);
+    font-weight:950;font-size:.78rem;
+    width:max-content;
+    margin-bottom:8px;
+  }
+
+  /* grids */
+  #br-proHome .grid2{display:grid;gap:14px}
+  @media(min-width:980px){ #br-proHome .grid2{grid-template-columns:1.05fr .95fr;gap:16px} }
+  #br-proHome .grid3{display:grid;gap:14px}
+  @media(min-width:980px){ #br-proHome .grid3{grid-template-columns:repeat(3,1fr);gap:16px} }
+
+  /* cards */
+  #br-proHome .card{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+    padding:16px;
+    transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+  #br-proHome .card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(61,214,198,.7);
+    box-shadow:0 26px 90px rgba(61,214,198,.16);
+  }
+  #br-proHome .pillRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  #br-proHome .pill{
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.18);
+    background:rgba(61,214,198,.10);
+    font-weight:950;font-size:.76rem;
+  }
+
+  /* KPI tiles */
+  #br-proHome .kpiGrid{display:grid;gap:12px}
+  @media(min-width:980px){ #br-proHome .kpiGrid{grid-template-columns:repeat(4,1fr)} }
+  #br-proHome .kpi{
+    background:
+      radial-gradient(500px 200px at 20% 0%, rgba(61,214,198,.14), transparent 60%),
+      radial-gradient(500px 200px at 90% 120%, rgba(33,179,167,.10), transparent 60%),
+      var(--card);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:14px 14px 12px;
+    box-shadow:0 18px 70px rgba(0,0,0,.35);
+  }
+  #br-proHome .kpi .num{
+    font-size:1.6rem;
+    font-weight:1000;
+    letter-spacing:-.02em;
+    color:#fff;
+  }
+  #br-proHome .kpi .cap{color:rgba(233,242,255,.75);font-weight:800;font-size:.88rem;margin-top:4px}
+
+  /* timeline */
+  #br-proHome .timeline{display:grid;gap:12px}
+  @media(min-width:980px){ #br-proHome .timeline{grid-template-columns:repeat(3,1fr)} }
+  #br-proHome .step{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:14px;
+  }
+  #br-proHome .step b{display:inline-block;margin-bottom:6px;color:#fff}
+  #br-proHome .step .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.22);
+    background:rgba(61,214,198,.10);
+    font-weight:950;font-size:.78rem;
+    margin-bottom:10px;
+  }
+
+  /* accordion */
+  #br-proHome .acc{display:grid;gap:10px}
+  #br-proHome details{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    padding:12px 14px;
+    box-shadow:0 18px 70px rgba(0,0,0,.25);
+  }
+  #br-proHome summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    font-weight:950;
+    color:#fff;
+  }
+  #br-proHome summary::-webkit-details-marker{display:none}
+  #br-proHome .chev{
+    width:34px;height:34px;border-radius:12px;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(8,18,37,.55);
+  }
+  #br-proHome details[open] .chev{border-color:rgba(61,214,198,.7); background:rgba(61,214,198,.08)}
+  #br-proHome .accBody{margin-top:10px;color:rgba(233,242,255,.82)}
+
+  /* sponsors strip */
+  #br-proHome .sponsorTrack{
+    display:flex;gap:12px;overflow:auto;
+    padding:10px 6px 6px;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(61,214,198,.45) transparent;
+  }
+  #br-proHome .sponsorTrack::-webkit-scrollbar{height:10px}
+  #br-proHome .sponsorTrack::-webkit-scrollbar-thumb{background:rgba(61,214,198,.35);border-radius:999px}
+  #br-proHome .sTile{
+    flex:0 0 auto;
+    width:130px;height:130px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;
+    padding:12px;
+    transition:.2s;
+    text-align:center;
+  }
+  #br-proHome .sTile:hover{transform:translateY(-3px);border-color:rgba(61,214,198,.7)}
+  #br-proHome .sTile img{width:72%;height:62%;object-fit:contain;filter:grayscale(100%) brightness(.95);opacity:.9;transition:.2s}
+  #br-proHome .sTile:hover img{filter:none;opacity:1}
+  #br-proHome .sName{font-size:.82rem;font-weight:950;color:rgba(233,242,255,.9);line-height:1.1}
+
+  /* map + footer */
+  #br-proHome .mapBox{
+    border-radius:22px; overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 18px 70px rgba(0,0,0,.35);
+    background:rgba(255,255,255,.02);
+    height:min(560px,70vh);
+  }
+  #br-proHome .mapBox iframe{width:100%;height:100%;border:0}
+
+  #br-proHome .footCTA{
+    margin-top:36px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    border-radius:24px;
+    padding:22px;
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+    text-align:center;
+  }
+
+  @media(max-width:768px){
+    #br-proHome{padding:44px 16px 86px}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    #br-proHome *{scroll-behavior:auto !important}
+  }
+</style>
+<section aria-label="Batroun Race Home" id="br-proHome">
+<div class="wrap">
+<!-- HERO --><header aria-label="Batroun Race hero" class="hero">
+<div class="heroMedia">
+<!-- Replace with your best hero image (Shopify CDN or theme asset) --> <img loading="eager" alt="Batroun Race — Coastal running event in Batroun, Lebanon" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Batroun_Race_Start_Line_Energy_Arch.jpg?v=1767793712">
+</div>
+<div class="heroBody">
+<div class="kicker">Official Event • Batroun, Lebanon</div>
+<h1 class="headline">Batroun Race</h1>
+<p class="sub">A Coastal Sports &amp; Brand Activation Platform — professionally structured at the intersection of sport, experiential marketing, tourism, and community engagement.</p>
+<div class="cta">
+<a href="https://www.batrounrace.com/pages/registration" class="btn primary">Register Now</a> <a href="https://www.batrounrace.com/pages/about-batroun-race" class="btn outline">About Us</a> <a href="https://www.batrounrace.com/pages/contact" class="btn ghost">Partnerships</a>
+</div>
+<div aria-label="Quick links" class="chips">
+<a href="https://www.batrounrace.com/pages/batroun-race-2025-winners-official-podium-result" class="chip">Results 2025</a> <a href="https://www.batrounrace.com/pages/pages-sponsors-partners" class="chip">Sponsors &amp; Partners</a> <a href="https://www.batrounrace.com/pages/batroun-race-sponsors" class="chip">Sponsors</a> <a href="https://www.batrounrace.com/pages/contact" class="chip">Contact</a>
+</div>
+</div>
+</header><!-- Sticky mini nav -->
+<div aria-label="Section navigation" class="miniNavWrap">
+<div id="brMiniNav" class="miniNav">
+<button data-jump="overview" type="button" class="miniBtn isActive">Overview</button> <button data-jump="platform" type="button" class="miniBtn">Platform</button> <button data-jump="proof" type="button" class="miniBtn">Proof</button> <button data-jump="roi" type="button" class="miniBtn">ROI</button> <button data-jump="sponsors" type="button" class="miniBtn">Sponsors</button> <button data-jump="map" type="button" class="miniBtn">Map</button> <button data-jump="contact" type="button" class="miniBtn">Contact</button>
+</div>
+</div>
+<div aria-hidden="true" class="hr"><br></div>
+<!-- OVERVIEW -->
+<section aria-label="Executive overview" id="brSec-overview" class="block"><span class="badge">Executive Overview</span>
+<div class="grid2">
+<div class="card">
+<h2>Structured. Repeatable. Measurable.</h2>
+<p class="sub">Batroun Race is designed as a repeatable business platform — not a one-off race — delivering measurable exposure, brand value, and long-term partnership opportunities.</p>
+<div class="pillRow">
+<span class="pill">Sport</span> <span class="pill">Experiential Marketing</span> <span class="pill">Tourism</span> <span class="pill">Community Engagement</span>
+</div>
+<p style="margin-top: 12px;">Organized and managed by <b>Al Khachan Marketing Agency</b> (strategy, commercial structuring, execution, media, and performance reporting).</p>
+</div>
+<div class="card">
+<h3>Core Objectives</h3>
+<div style="margin-top: 10px;" class="acc">
+<details open="">
+<summary>High-quality athletic experience <span class="chev">+</span></summary>
+<div class="accBody">Professional route design, safety planning, hydration, volunteers, and on-ground operations.</div>
+</details>
+<details>
+<summary>Sustained brand exposure &amp; recall <span class="chev">+</span></summary>
+<div class="accBody">Multi-touchpoint visibility before, during, and after race day across physical + digital channels.</div>
+</details>
+<details>
+<summary>Measurable marketing ROI for partners <span class="chev">+</span></summary>
+<div class="accBody">UTM tracking, QR attribution, reach/engagement reporting, and post-event ROI summary.</div>
+</details>
+<details>
+<summary>City branding &amp; local economic activity <span class="chev">+</span></summary>
+<div class="accBody">Tourism footfall, dwell time at key zones, and organic spectator presence along the coast.</div>
+</details>
+</div>
+</div>
+</div>
+<div aria-label="Key performance indicators" class="kpiGrid" style="margin-top: 14px;">
+<div class="kpi">
+<div data-count="550" class="num">0</div>
+<div class="cap">Runners (Main Race 2025)</div>
+</div>
+<div class="kpi">
+<div data-count="140" class="num">0</div>
+<div class="cap">Participants (Race for a Cause 2025)</div>
+</div>
+<div class="kpi">
+<div data-count="1500000" class="num">0</div>
+<div class="cap">Estimated Digital Reach (Impressions)</div>
+</div>
+<div class="kpi">
+<div data-count="2000" class="num">0</div>
+<div class="cap">Target Runners 2026</div>
+</div>
+<p style="grid-column: 1/-1; margin-top: 8px; opacity: .85;">KPIs guide planning, optimization, and sponsor reporting.</p>
+</div>
+</section>
+<div aria-hidden="true" class="hr"><br></div>
+<!-- PLATFORM -->
+<section aria-label="Market context and platform design" id="brSec-platform" class="block"><span class="badge">Market Context &amp; Positioning</span>
+<div class="grid3">
+<article class="card">
+<h3>High-value environment</h3>
+<p>Batroun is a coastal tourism hub with consistent weekend footfall and dense lifestyle venues.</p>
+<div class="pillRow">
+<span class="pill">Cafés</span><span class="pill">Retail</span><span class="pill">Souks</span><span class="pill">Beaches</span>
+</div>
+</article>
+<article class="card">
+<h3>Brand-fit alignment</h3>
+<p>Strong match with wellness, sport, hydration, lifestyle, tech, and leisure brands.</p>
+<div class="pillRow">
+<span class="pill">Wellness</span><span class="pill">Performance</span><span class="pill">Lifestyle</span>
+</div>
+</article>
+<article class="card">
+<h3>Organic amplification</h3>
+<p>Natural spectator presence + content capture zones convert physical presence into digital reach.</p>
+<div class="pillRow">
+<span class="pill">UGC</span><span class="pill">Creators</span><span class="pill">Recap Content</span>
+</div>
+</article>
+</div>
+<div aria-hidden="true" class="hr"><br></div>
+<span class="badge">Mission &amp; Vision</span>
+<div class="grid2">
+<div class="card">
+<h2>Mission</h2>
+<p class="sub">To design and operate professionally managed sports events that generate measurable marketing value, strengthen community engagement, and position host cities as active lifestyle destinations.</p>
+<p style="opacity: .85;">Batroun Race exists to professionalize the local race ecosystem through structure, data, and accountability.</p>
+</div>
+<div class="card">
+<h2>Vision</h2>
+<div style="margin-top: 10px;" class="acc">
+<details open="">
+<summary>A reference coastal running event in Lebanon <span class="chev">+</span></summary>
+<div class="accBody">Consistent quality, safety, and runner satisfaction year over year.</div>
+</details>
+<details>
+<summary>A trusted annual marketing platform for brands <span class="chev">+</span></summary>
+<div class="accBody">Clear deliverables, activation options, and sponsor renewal pathways.</div>
+</details>
+<details>
+<summary>A benchmark for transparent ROI-driven sponsorship <span class="chev">+</span></summary>
+<div class="accBody">Attribution tools + reporting discipline within 7 days.</div>
+</details>
+<details>
+<summary>Scalable for regional expansion <span class="chev">+</span></summary>
+<div class="accBody">Repeatable operating system and commercial structure.</div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="hr"><br></div>
+<!-- PROOF -->
+<section aria-label="Proof of execution" id="brSec-proof" class="block"><span class="badge">Proof of Execution</span>
+<div class="grid2">
+<div class="card">
+<h2>2025 Performance</h2>
+<p><b>July 2025 Main Race:</b> 550+ registered runners</p>
+<p><b>December 2025 “Race for a Cause”:</b> 140 participants</p>
+<div style="margin-top: 10px;" class="pillRow">
+<span class="pill">Municipal support &amp; permits</span> <span class="pill">Media coverage</span> <span class="pill">Safety teams</span> <span class="pill">Public race data</span>
+</div>
+<p style="margin-top: 12px; opacity: .85;">This establishes demand, execution reliability, and partner confidence.</p>
+</div>
+<div class="card">
+<h2>Route &amp; Experience Design</h2>
+<p class="sub">The official route runs from <b>Hangloose to Koubba</b> and back — optimized for runner experience and brand visibility.</p>
+<div style="margin-top: 10px;" class="timeline">
+<div class="step">
+<div class="tag">Visibility</div>
+<b>Coastline exposure</b>
+<p>Long sightlines + natural foot traffic.</p>
+</div>
+<div class="step">
+<div class="tag">Brand Touchpoints</div>
+<b>Repeatable impressions</b>
+<p>Arches, flags, hydration zones, finish presence.</p>
+</div>
+<div class="step">
+<div class="tag">Content</div>
+<b>Capture zones</b>
+<p>Start/finish + key points designed for media.</p>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="hr"><br></div>
+<span class="badge">Governance &amp; Risk Management</span>
+<div class="grid3">
+<div class="card">
+<h3>Coordination</h3>
+<p>Coordination with Batroun &amp; Hamat Municipalities for permits and route control.</p>
+</div>
+<div class="card">
+<h3>Standards</h3>
+<p>Alignment with Lebanese Federation standards for event discipline and credibility.</p>
+</div>
+<div class="card">
+<h3>Safety</h3>
+<p>On-course safety support (Caritas, Batroun Scouts), medical teams, hydration planning.</p>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="hr"><br></div>
+<!-- ROI -->
+<section aria-label="ROI and sponsorship model" id="brSec-roi" class="block"><span class="badge">Sponsor Value Creation</span>
+<div class="grid2">
+<div class="card">
+<h2>3-Phase Brand Exposure Model</h2>
+<div style="margin-top: 10px;" class="timeline">
+<div class="step">
+<div class="tag">Pre-Event</div>
+<b>Awareness build</b>
+<p>Website placement, social announcements, local visibility.</p>
+</div>
+<div class="step">
+<div class="tag">Event Day</div>
+<b>High dwell-time exposure</b>
+<p>Jerseys, arches, flags, route branding, hydration stations, activations.</p>
+</div>
+<div class="step">
+<div class="tag">Post-Event</div>
+<b>Long-tail circulation</b>
+<p>Recap videos, photo assets, tagged reels/stories, sponsor content package.</p>
+</div>
+</div>
+</div>
+<div class="card">
+<h2>ROI Framework (Attribution First)</h2>
+<div style="margin-top: 10px;" class="acc">
+<details open="">
+<summary>Measurement tools <span class="chev">+</span></summary>
+<div class="accBody">QR codes per sponsor • UTM-tracked links • content reach &amp; engagement metrics</div>
+</details>
+<details>
+<summary>Reporting <span class="chev">+</span></summary>
+<div class="accBody">Post-event ROI summary delivered within <b>7 days</b> (deliverables, exposure, content performance).</div>
+</details>
+<details>
+<summary>Commercial structure <span class="chev">+</span></summary>
+<div class="accBody">Tiered packages • category exclusivity options • activation add-ons • multi-year renewals.</div>
+</details>
+</div>
+<div style="margin-top: 12px;" class="cta">
+<a href="https://www.batrounrace.com/pages/contact" class="btn primary">Request Sponsorship Deck</a> <a href="https://www.batrounrace.com/pages/pages-sponsors-partners" class="btn outline">See Partners</a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="hr"><br></div>
+<span class="badge">2026–2027 Growth Plan</span>
+<div class="grid3">
+<div class="card">
+<h3>Scale participation</h3>
+<p>Increase runner volume with controlled operations and strong safety standards.</p>
+</div>
+<div class="card">
+<h3>Increase exclusivity</h3>
+<p>Strengthen sponsor category positioning for premium partnerships.</p>
+</div>
+<div class="card">
+<h3>Enhance reporting</h3>
+<p>Deeper benchmarks, clearer attribution, and improved partner retention.</p>
+</div>
+</div>
+<p style="margin-top: 12px; opacity: .85;">Batroun Race delivers compound marketing ROI — not one-day exposure.</p>
+</section>
+<div aria-hidden="true" class="hr"><br></div>
+<!-- SPONSORS -->
+<section aria-label="Sponsors and partners" id="brSec-sponsors" class="block"><span class="badge">Sponsors &amp; Partners</span>
+<h2 style="margin-top: 4px;">Trusted by established brands</h2>
+<p class="sub">Participation reflects confidence in execution and delivered value.</p>
+<div aria-label="Sponsor logos" id="brSponsorTrack" class="sponsorTrack"></div>
+<div style="margin-top: 14px;" class="cta">
+<a href="https://www.batrounrace.com/pages/batroun-race-sponsors" class="btn outline">Sponsors Page</a> <a href="https://www.batrounrace.com/pages/pages-sponsors-partners" class="btn outline">Sponsors &amp; Partners</a>
+</div>
+</section>
+<div aria-hidden="true" class="hr"><br></div>
+<!-- MAP -->
+<section aria-label="Batroun location map" id="brSec-map" class="block"><span class="badge">Location</span>
+<h2 style="margin-top: 4px;">Find Batroun</h2>
+<p class="sub">Plan your route and meet us by the coast.</p>
+<div class="mapBox">
+<!-- You can replace this embed with an official Google Maps embed you copy from Google Maps --> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.303126056065!2d35.655!3d34.255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15222377aa2222df%3A0x3b4e712345678!2sBatroun!5e0!3m2!1sen!2slb!4v1700000000000" title="Batroun map" loading="lazy">
+        </iframe>
+</div>
+</section>
+<!-- CONTACT -->
+<section aria-label="Contact and partnerships" id="brSec-contact" class="footCTA">
+<h2>Partnerships &amp; Contact</h2>
+<p>Professional terms. Clear deliverables. Transparent reporting. Long-term value creation.</p>
+<p style="opacity: .9; margin-top: 10px;"><b>Email:</b> <a style="text-decoration: underline;" href="mailto:Batrounrace@gmail.com">Batrounrace@gmail.com</a>   •   <b>WhatsApp:</b> <a style="text-decoration: underline;" href="https://wa.me/96181300625">+961 81 300 625</a></p>
+<div style="justify-content: center; margin-top: 14px;" class="cta">
+<a href="https://www.batrounrace.com/pages/contact" class="btn primary">Contact Us</a> <a href="https://www.batrounrace.com/pages/registration" class="btn outline">Register</a> <a href="https://www.batrounrace.com/pages/about-batroun-race" class="btn ghost">About</a>
+</div>
+<p style="opacity: .75; margin-top: 14px;">© <span id="brYear"></span> Batroun Race | A professionally managed coastal sports &amp; brand activation platform.</p>
+</section>
+</div>
+<script>
+    (function(){
+      const root = document.querySelector('#br-proHome');
+      if(!root) return;
+
+      // Year
+      const y = root.querySelector('#brYear');
+      if(y) y.textContent = new Date().getFullYear();
+
+      // Mini-nav smooth scroll + active state
+      const btns = root.querySelectorAll('.miniBtn');
+      btns.forEach(b=>{
+        b.addEventListener('click', ()=>{
+          btns.forEach(x=>x.classList.remove('isActive'));
+          b.classList.add('isActive');
+          const key = b.getAttribute('data-jump');
+          const target = root.querySelector('#brSec-' + key);
+          if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
+
+      // KPI counter animation (runs once when visible)
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function fmt(n){
+        // format big numbers nicely (e.g., 1500000 -> 1,500,000)
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      function animateCount(el, to){
+        const from = 0;
+        const dur = 900;
+        const start = performance.now();
+
+        function tick(t){
+          const p = Math.min(1, (t - start) / dur);
+          const val = Math.floor(from + (to - from) * (1 - Math.pow(1 - p, 3)));
+          el.textContent = fmt(val);
+          if(p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const kpis = Array.from(root.querySelectorAll('.kpi .num[data-count]'));
+      let kpiDone = false;
+
+      const obs = ('IntersectionObserver' in window) ? new IntersectionObserver((entries)=>{
+        if(kpiDone) return;
+        const hit = entries.some(e=>e.isIntersecting);
+        if(hit){
+          kpiDone = true;
+          if(!reduce){
+            kpis.forEach(el=> animateCount(el, parseInt(el.getAttribute('data-count'),10) || 0));
+          } else {
+            kpis.forEach(el=> el.textContent = fmt(parseInt(el.getAttribute('data-count'),10) || 0));
+          }
+          obs.disconnect();
+        }
+      }, {threshold:0.25}) : null;
+
+      if(obs){
+        const kpiBlock = root.querySelector('#brSec-overview');
+        if(kpiBlock) obs.observe(kpiBlock);
+      } else {
+        // fallback
+        kpis.forEach(el=> el.textContent = fmt(parseInt(el.getAttribute('data-count'),10) || 0));
+      }
+
+      // Sponsors data (edit logos/links if needed)
+      const sponsors = [
+        {name:"Aquafina", url:"https://www.aquafina.com/en-US/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/AQUAFINA.jpg?v=1759775548"},
+        {name:"Gatorade", url:"https://www.gatorade.com", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/GATORADE.jpg?v=1759775585"},
+        {name:"XXL Energy", url:"https://www.facebook.com/XXLEnergyLB/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/XXL_ENERY.jpg?v=1759775742"},
+        {name:"Whish Money", url:"https://whishmoneylebanon.com/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Whish_MoNEY.jpg?v=1759775521"},
+        {name:"Lebtivity", url:"https://www.lebtivity.com", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/lebtivity.jpg?v=1759775471"},
+        {name:"Footlab", url:"#", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/FOOTLAB.jpg?v=1759775398"},
+        {name:"Koura Press", url:"#", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Khoury_Shopping_Center.jpg?v=1"},
+        {name:"Khoury Center", url:"#", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/KHOURY_SHOPPING_CENETER.jpg?v=1759775370"},
+        {name:"Merk", url:"https://merk-me.com/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/merK.jpg?v=1759775425"},
+        {name:"Studio Jammal", url:"https://gobatroun.com/location/studio-jammal-s-a-r-l/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/STUDIO_JAMMAL.jpg?v=1759775659"},
+        {name:"Blue Bay", url:"https://blubaybatroun.com/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/BLUE_BAY.jpg?v=1759775706"},
+        {name:"Batroun Mountains", url:"http://batrounmountains.wine/", logo:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/BATROUN_MOUNTAINS.jpg?v=1760902144"}
+      ];
+
+      const track = root.querySelector('#brSponsorTrack');
+      if(track){
+        track.innerHTML = "";
+        sponsors.forEach(s=>{
+          const a = document.createElement('a');
+          a.className = 'sTile';
+          a.href = s.url || '#';
+
+          // only open new tab for real links
+          const isReal = s.url && s.url !== '#';
+          if(isReal){ a.target = '_blank'; a.rel = 'noopener'; }
+
+          a.innerHTML = `<img src="${s.logo}" alt="${s.name}" loading="lazy"><div class="sName">${s.name}</div>`;
+          track.appendChild(a);
+        });
+
+        // light auto-scroll (optional)
+        if(!reduce){
+          let t = null;
+          const SPEED_MS = 2500;
+
+          function start(){
+            stop();
+            t = setInterval(()=>{
+              const max = track.scrollWidth - track.clientWidth - 5;
+              if(track.scrollLeft >= max) track.scrollTo({left:0, behavior:'smooth'});
+              else track.scrollBy({left:160, behavior:'smooth'});
+            }, SPEED_MS);
+          }
+          function stop(){ if(t){ clearInterval(t); t = null; } }
+
+          track.addEventListener('mouseenter', stop);
+          track.addEventListener('mouseleave', start);
+          track.addEventListener('touchstart', stop, {passive:true});
+          track.addEventListener('touchend', start, {passive:true});
+          start();
+        }
+      }
+
+      // Accordion chevrons (+ to ×)
+      root.querySelectorAll('details').forEach(d=>{
+        const chev = d.querySelector('.chev');
+        if(!chev) return;
+        const sync = ()=> chev.textContent = d.open ? '×' : '+';
+        sync();
+        d.addEventListener('toggle', sync);
+      });
+    })();
+  </script></section>
