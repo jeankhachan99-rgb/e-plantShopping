@@ -1,0 +1,594 @@
+<!-- =====================
+WFL × KIDS FIRST — TEMPLATE VERSION
+Replace {{...}} placeholders with your content
+===================== -->
+<style>
+/* ===== FULL BLEED FIX (Shopify container) ===== */
+#akh-wfl{
+  width:100vw !important;
+  position:relative;
+  left:50%; right:50%;
+  margin-left:-50vw !important;
+  margin-right:-50vw !important;
+  margin-top:-60px;
+}
+
+/* ===== THEME (lighter + premium) ===== */
+#akh-wfl{
+  --black:#0b0b10;
+  --black2:#111426;
+
+  --white:#ffffff;
+  --paper:#fbfaf7;
+  --paper2:#f7f5ef;
+  --ink:#10121a;
+  --muted:#666878;
+
+  --gold:#d8ae56;
+  --gold2:#fff0c9;
+  --goldSoft:rgba(216,174,86,.12);
+  --goldGlow:rgba(216,174,86,.28);
+
+  --green:#20d6a7;
+  --greenGlow:rgba(32,214,167,.10);
+
+  --line:rgba(16,16,24,.10);
+  --shadow:0 22px 70px rgba(0,0,0,.22);
+  --shadow2:0 10px 26px rgba(0,0,0,.10);
+
+  font:16px/1.65 system-ui,-apple-system,Inter,Segoe UI,Roboto,Arial;
+  color:var(--ink);
+  overflow:hidden;
+  isolation:isolate;
+}
+#akh-wfl *{box-sizing:border-box}
+#akh-wfl a{color:inherit;text-decoration:none}
+#akh-wfl img{max-width:100%;display:block}
+
+/* ===== BIG TITLES ===== */
+#akh-wfl h1{
+  margin:0 0 12px;
+  font-weight:950;
+  letter-spacing:.01em;
+  font-size:clamp(44px,5.9vw,82px);
+  line-height:1.02;
+  color:#fff;
+}
+#akh-wfl h2{
+  margin:0 0 10px;
+  font-weight:950;
+  font-size:clamp(26px,3.6vw,44px);
+  line-height:1.12;
+  color:#11131b;
+}
+#akh-wfl h3{
+  margin:0 0 8px;
+  font-weight:950;
+  font-size:clamp(18px,2.2vw,24px);
+  line-height:1.2;
+  color:#11131b;
+}
+#akh-wfl p{margin:0 0 10px}
+#akh-wfl .sub{max-width:900px;color:#2c2f3a}
+
+/* ===== GOLD TEXT ===== */
+#akh-wfl .gold{
+  background:linear-gradient(180deg,var(--gold2),var(--gold));
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  text-shadow:0 10px 26px rgba(216,174,86,.14);
+}
+
+/* =========================
+   FRONT HERO
+========================= */
+#akh-wfl .stage{
+  position:relative;
+  padding:34px 0 116px;
+  background:
+    radial-gradient(980px 560px at 12% -10%, var(--goldGlow), transparent 60%),
+    radial-gradient(980px 560px at 90% 120%, var(--greenGlow), transparent 62%),
+    linear-gradient(180deg,var(--black),var(--black2));
+}
+
+/* softer texture behind */
+#akh-wfl .stage::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    url("{{STAGE_BG_IMAGE}}")
+    center/cover no-repeat;
+  opacity:.10;
+  filter:saturate(.95) contrast(1.05);
+  z-index:0;
+}
+
+/* darker overlay for readability */
+#akh-wfl .stage::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(720px 440px at 15% 10%, rgba(216,174,86,.18), transparent 65%),
+    radial-gradient(720px 440px at 90% 100%, rgba(32,214,167,.08), transparent 70%),
+    linear-gradient(180deg, rgba(0,0,0,.56), rgba(0,0,0,.60));
+  z-index:1;
+}
+
+#akh-wfl .wrap{max-width:1180px;margin:0 auto;padding:0 16px;position:relative;z-index:2}
+
+/* HERO LAYOUT */
+#akh-wfl .hero{display:grid;gap:18px;align-items:center}
+@media(min-width:980px){#akh-wfl .hero{grid-template-columns:1.1fr .9fr;gap:26px}}
+#akh-wfl .eyebrow{
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  font-weight:950;
+  color:rgba(255,255,255,.82);
+  margin-bottom:12px;
+}
+#akh-wfl .lead{
+  margin:0;
+  max-width:900px;
+  color:rgba(255,255,255,.88);
+  font-size:1.02rem;
+}
+
+/* PILLS */
+#akh-wfl .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+#akh-wfl .pill{
+  padding:7px 12px;border-radius:999px;
+  font-size:.78rem;font-weight:950;letter-spacing:.06em;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.20);
+  color:rgba(255,255,255,.90);
+}
+#akh-wfl .pill.gold{border-color:rgba(216,174,86,.55);background:rgba(216,174,86,.10)}
+#akh-wfl .pill.green{border-color:rgba(32,214,167,.40);background:rgba(32,214,167,.08)}
+
+/* CTA */
+#akh-wfl .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+#akh-wfl .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 18px;border-radius:999px;
+  font-weight:950;font-size:.95rem;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  transition:transform .18s ease, filter .18s ease;
+  white-space:nowrap;
+  position:relative;overflow:hidden;
+  backdrop-filter:blur(10px);
+}
+#akh-wfl .btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+#akh-wfl .btn-gold{
+  color:#0b0b10;
+  border-color:rgba(216,174,86,.78);
+  background:
+    radial-gradient(160px 90px at 30% 20%, rgba(255,255,255,.92), transparent 62%),
+    linear-gradient(180deg,var(--gold2),var(--gold));
+  box-shadow:0 18px 52px rgba(216,174,86,.30);
+}
+#akh-wfl .btn-gold::before{
+  content:"";
+  position:absolute;top:-140%;left:-40%;
+  width:55%;height:360%;
+  background:linear-gradient(120deg, rgba(255,255,255,.92), rgba(255,255,255,0));
+  transform:rotate(20deg);
+  opacity:.65;
+  animation:akhShine 4.8s linear infinite;
+}
+@keyframes akhShine{from{left:-40%;}to{left:140%;}}
+#akh-wfl .btn-ghost{background:transparent;border-color:rgba(216,174,86,.55);color:rgba(255,255,255,.92)}
+
+/* ===== RIGHT POSTER ===== */
+#akh-wfl .hero-photo{
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 26px 80px rgba(0,0,0,.42);
+  position:relative;
+  min-height:420px;
+  background:#111;
+}
+#akh-wfl .hero-photo img{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  object-fit:cover;
+  transform:scale(1.01);
+}
+#akh-wfl .hero-photo .overlay{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(650px 430px at 12% 10%, rgba(216,174,86,.18), transparent 62%),
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.50));
+}
+#akh-wfl .hero-badge{
+  position:absolute;left:14px;right:14px;bottom:14px;
+  background:rgba(255,255,255,.93);
+  border:1px solid rgba(255,255,255,.62);
+  backdrop-filter:blur(14px);
+  border-radius:20px;
+  padding:12px 12px;
+  box-shadow:var(--shadow2);
+}
+#akh-wfl .hero-badge strong{display:block;font-size:.95rem;color:#11131b}
+#akh-wfl .hero-badge span{display:block;font-size:.82rem;color:var(--muted);margin-top:2px}
+
+/* ===== WHITE PANEL OVERLAP ===== */
+#akh-wfl .panel-shell{position:relative;margin-top:-86px;padding-bottom:80px}
+#akh-wfl .panel{max-width:1180px;margin:0 auto;padding:20px 16px 0}
+#akh-wfl .surface{
+  background:linear-gradient(180deg,var(--white),var(--paper2));
+  border-radius:30px;
+  border:1px solid rgba(16,16,24,.06);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+#akh-wfl .inner{padding:22px 18px 18px}
+@media(min-width:980px){#akh-wfl .inner{padding:28px 26px 26px}}
+
+/* ===== SECTION BANNERS ===== */
+#akh-wfl .sec-banner{
+  position:relative;
+  border-radius:26px;
+  overflow:hidden;
+  padding:22px 16px;
+  margin:18px 0 14px;
+  border:1px solid rgba(16,16,24,.08);
+  box-shadow:var(--shadow2);
+  background:
+    radial-gradient(740px 340px at 12% 0%, rgba(216,174,86,.16), transparent 62%),
+    radial-gradient(740px 340px at 95% 120%, rgba(32,214,167,.08), transparent 65%),
+    linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,0)),
+    var(--sec-img) center/cover no-repeat;
+}
+#akh-wfl .sec-banner::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.78) 55%, rgba(255,255,255,.90) 100%);
+  pointer-events:none;
+}
+#akh-wfl .sec-banner > *{position:relative;z-index:1}
+#akh-wfl .sec-eyebrow{
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  font-size:.76rem;
+  font-weight:950;
+  color:#11131b;
+  opacity:.70;
+  margin-bottom:8px;
+}
+
+/* DIVIDER */
+#akh-wfl .divider{margin:30px 0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,174,86,.65),transparent)}
+
+/* GRIDS / CARDS */
+#akh-wfl .grid{display:grid;gap:14px}
+@media(min-width:980px){#akh-wfl .grid-2{grid-template-columns:1fr 1fr}#akh-wfl .grid-3{grid-template-columns:repeat(3,1fr)}}
+#akh-wfl .card{
+  background:linear-gradient(180deg,#fff,var(--paper2));
+  border:1px solid rgba(16,16,24,.08);
+  border-radius:22px;
+  box-shadow:var(--shadow2);
+  padding:16px 16px;
+  position:relative;overflow:hidden;
+}
+#akh-wfl .card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(620px 280px at 15% 0%, rgba(216,174,86,.12), transparent 58%);
+  opacity:.85;pointer-events:none;
+}
+#akh-wfl .card>*{position:relative}
+
+/* KPI */
+#akh-wfl .kpi-grid{display:grid;gap:12px;margin-top:14px}
+@media(min-width:980px){#akh-wfl .kpi-grid{grid-template-columns:repeat(4,1fr)}}
+#akh-wfl .kpi{
+  border-radius:20px;padding:16px 14px;
+  background:linear-gradient(180deg,#fff,var(--paper2));
+  border:1px solid rgba(16,16,24,.08);
+  box-shadow:var(--shadow2);
+}
+#akh-wfl .kpi .big{font-weight:950;font-size:clamp(26px,3vw,40px);line-height:1;color:#11131b}
+#akh-wfl .kpi small{color:var(--muted);font-weight:750}
+
+/* GALLERY */
+#akh-wfl .gallery{display:grid;gap:14px;margin-top:14px}
+@media(min-width:980px){#akh-wfl .gallery{grid-template-columns:repeat(3,1fr)}}
+#akh-wfl .gitem{border-radius:22px;overflow:hidden;border:1px solid rgba(16,16,24,.08);background:#fff;box-shadow:var(--shadow2)}
+#akh-wfl .gitem img{width:100%;height:220px;object-fit:cover}
+#akh-wfl .gcap{padding:12px 12px 14px}
+#akh-wfl .gcap strong{display:block;margin-bottom:4px}
+
+/* FAQ */
+#akh-wfl .faq{display:grid;gap:10px;margin-top:14px}
+@media(min-width:980px){#akh-wfl .faq{grid-template-columns:1fr 1fr}}
+#akh-wfl details{background:#fff;border:1px solid rgba(16,16,24,.08);border-radius:18px;padding:12px 12px;box-shadow:var(--shadow2)}
+#akh-wfl summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:950}
+#akh-wfl summary::-webkit-details-marker{display:none}
+#akh-wfl details p{margin:10px 0 2px;color:#3b3c48}
+#akh-wfl .chev{
+  width:30px;height:30px;border-radius:12px;
+  border:1px solid rgba(216,174,86,.42);
+  background:rgba(216,174,86,.10);
+  display:flex;align-items:center;justify-content:center;font-weight:950
+}
+#akh-wfl details[open] .chev{transform:rotate(180deg);transition:transform .18s ease}
+
+/* FINAL CTA */
+#akh-wfl .final{
+  background:
+    radial-gradient(760px 380px at 50% 0%, rgba(216,174,86,.18), transparent 60%),
+    radial-gradient(760px 380px at 90% 120%, rgba(32,214,167,.10), transparent 62%),
+    linear-gradient(180deg, #0b0b10, #121322);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;
+  padding:22px 18px;
+  color:#fff;
+  text-align:center;
+  box-shadow:0 18px 70px rgba(0,0,0,.28);
+}
+#akh-wfl .final h2{color:#fff}
+#akh-wfl .final p{color:rgba(255,255,255,.90);max-width:860px;margin:10px auto 16px}
+
+/* MOBILE STICKY CTA */
+#akh-wfl .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(10,10,15,.55);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.10);padding:10px 14px 14px}
+#akh-wfl .sticky-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:center}
+#akh-wfl .sticky a{flex:1;max-width:560px}
+@media(min-width:900px){#akh-wfl .sticky{display:none}}
+
+/* MOBILE TUNING */
+@media(max-width:768px){
+  #akh-wfl .panel-shell{margin-top:-72px}
+  #akh-wfl h1{font-size:clamp(36px,9.2vw,58px)}
+  #akh-wfl .hero-photo{min-height:320px}
+  #akh-wfl .hero-photo img{min-height:320px}
+  #akh-wfl .btn{width:100%;max-width:560px}
+  #akh-wfl .cta{gap:10px}
+  #akh-wfl .sec-banner{padding:18px 14px}
+}
+
+/* =========================================================
+SHOPIFY THEME OVERRIDE (FIX TINY COLUMNS / VERTICAL TEXT)
+========================================================= */
+#akh-wfl .grid,
+#akh-wfl .grid-2,
+#akh-wfl .grid-3,
+#akh-wfl .kpi-grid,
+#akh-wfl .gallery,
+#akh-wfl .faq{
+  display:grid !important;
+  grid-auto-flow:row !important;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap:14px !important;
+}
+#akh-wfl .card,
+#akh-wfl .kpi,
+#akh-wfl .gitem,
+#akh-wfl details{
+  min-width:0 !important;
+  width:100% !important;
+}
+#akh-wfl h3,
+#akh-wfl p,
+#akh-wfl li,
+#akh-wfl summary{
+  overflow-wrap:anywhere !important;
+  word-break:normal !important;
+}
+</style>
+<section itemtype="https://schema.org/CaseStudy" itemscope="" id="akh-wfl"><!-- ===== FRONT HERO ===== -->
+<div class="stage">
+<div class="wrap">
+<div class="hero"><!-- LEFT TEXT -->
+<div>
+<div class="eyebrow">{{HERO_EYEBROW}}</div>
+<h1>{{HERO_TITLE}} <span class="gold">{{HERO_TITLE_GOLD}}</span></h1>
+<p class="lead">{{HERO_LEAD}}</p>
+<div class="cta"><a href="{{CTA_PRIMARY_URL}}" class="btn btn-gold">{{CTA_PRIMARY_LABEL}}</a> <a href="{{CTA_SECONDARY_URL}}" class="btn btn-ghost">{{CTA_SECONDARY_LABEL}}</a></div>
+<div aria-label="Focus areas" class="pills"><span class="pill gold">{{PILL_1}}</span> <span class="pill">{{PILL_2}}</span> <span class="pill gold">{{PILL_3}}</span> <span class="pill">{{PILL_4}}</span> <span class="pill green">{{PILL_5}}</span></div>
+</div>
+<!-- RIGHT POSTER -->
+<aside aria-label="Event banner poster" class="hero-photo"><img loading="eager" alt="{{HERO_POSTER_ALT}}">
+<div class="overlay"><br></div>
+<div class="hero-badge"><strong>{{HERO_BADGE_TITLE}}</strong> <span>{{HERO_BADGE_SUBTITLE}}</span></div>
+</aside>
+</div>
+</div>
+</div>
+<!-- ===== WHITE PANEL CONTENT ===== -->
+<div class="panel-shell">
+<div class="panel">
+<div class="surface">
+<div class="inner"><!-- ===== IMPACT BANNER ===== -->
+<div style="--sec-img: url('{{IMPACT_BANNER_IMAGE}}');" class="sec-banner">
+<div class="sec-eyebrow">{{IMPACT_EYEBROW}}</div>
+<h2>{{IMPACT_TITLE}}</h2>
+<p class="sub">{{IMPACT_SUBTITLE}}</p>
+</div>
+<section id="impact">
+<div aria-label="Impact metrics" class="kpi-grid">
+<div class="kpi">
+<div data-count="{{KPI_1_VALUE}}" class="big">0</div>
+<small>{{KPI_1_LABEL}}</small></div>
+<div class="kpi">
+<div data-count="{{KPI_2_VALUE}}" class="big">0</div>
+<small>{{KPI_2_LABEL}}</small></div>
+<div class="kpi">
+<div data-suffix="{{KPI_3_SUFFIX}}" data-count="{{KPI_3_VALUE}}" class="big">0</div>
+<small>{{KPI_3_LABEL}}</small></div>
+<div class="kpi">
+<div data-count="{{KPI_4_VALUE}}" class="big">0</div>
+<small>{{KPI_4_LABEL}}</small></div>
+<div class="kpi">
+<div data-count="{{KPI_5_VALUE}}" class="big">0</div>
+<small>{{KPI_5_LABEL}}</small></div>
+<div class="kpi">
+<div data-count="{{KPI_6_VALUE}}" class="big">0</div>
+<small>{{KPI_6_LABEL}}</small></div>
+<div class="kpi">
+<div data-count="{{KPI_7_VALUE}}" class="big">0</div>
+<small>{{KPI_7_LABEL}}</small></div>
+<div class="kpi">
+<div data-count="{{KPI_8_VALUE}}" class="big">0</div>
+<small>{{KPI_8_LABEL}}</small></div>
+</div>
+</section>
+<div class="divider"><br></div>
+<!-- ===== DELIVERABLES ===== -->
+<div style="--sec-img: url('{{DELIVERABLES_BANNER_IMAGE}}');" class="sec-banner">
+<div class="sec-eyebrow">{{DELIVERABLES_EYEBROW}}</div>
+<h2>{{DELIVERABLES_TITLE}}</h2>
+<p class="sub">{{DELIVERABLES_SUBTITLE}}</p>
+</div>
+<section>
+<div style="margin-top: 14px;" class="grid grid-2">
+<article class="card">
+<h3>{{DELIVERABLES_CARD_1_TITLE}}</h3>
+<ul style="margin: 10px 0 0; padding-left: 18px; color: #2b2b35;">
+<li>{{DELIVERABLES_CARD_1_LI_1}}</li>
+<li>{{DELIVERABLES_CARD_1_LI_2}}</li>
+<li>{{DELIVERABLES_CARD_1_LI_3}}</li>
+<li>{{DELIVERABLES_CARD_1_LI_4}}</li>
+<li>{{DELIVERABLES_CARD_1_LI_5}}</li>
+</ul>
+</article>
+<article class="card">
+<h3>{{DELIVERABLES_CARD_2_TITLE}}</h3>
+<ul style="margin: 10px 0 0; padding-left: 18px; color: #2b2b35;">
+<li>{{DELIVERABLES_CARD_2_LI_1}}</li>
+<li>{{DELIVERABLES_CARD_2_LI_2}}</li>
+<li>{{DELIVERABLES_CARD_2_LI_3}}</li>
+<li>{{DELIVERABLES_CARD_2_LI_4}}</li>
+</ul>
+</article>
+</div>
+</section>
+<div class="divider"><br></div>
+<!-- ===== GALLERY ===== -->
+<div style="--sec-img: url('{{GALLERY_BANNER_IMAGE}}');" class="sec-banner">
+<div class="sec-eyebrow">{{GALLERY_EYEBROW}}</div>
+<h2>{{GALLERY_TITLE}}</h2>
+<p class="sub">{{GALLERY_SUBTITLE}}</p>
+</div>
+<section id="gallery">
+<div aria-label="Campaign gallery" class="gallery">
+<div class="gitem"><img loading="lazy" alt="{{GALLERY_1_ALT}}">
+<div class="gcap"><strong>{{GALLERY_1_TITLE}}</strong><span style="color: var(--muted);">{{GALLERY_1_CAPTION}}</span></div>
+</div>
+<div class="gitem"><img loading="lazy" alt="{{GALLERY_2_ALT}}">
+<div class="gcap"><strong>{{GALLERY_2_TITLE}}</strong><span style="color: var(--muted);">{{GALLERY_2_CAPTION}}</span></div>
+</div>
+<div class="gitem"><img loading="lazy" alt="{{GALLERY_3_ALT}}">
+<div class="gcap"><strong>{{GALLERY_3_TITLE}}</strong><span style="color: var(--muted);">{{GALLERY_3_CAPTION}}</span></div>
+</div>
+</div>
+</section>
+<div class="divider"><br></div>
+<!-- ===== FRAMEWORK ===== -->
+<div style="--sec-img: url('{{FRAMEWORK_BANNER_IMAGE}}');" class="sec-banner">
+<div class="sec-eyebrow">{{FRAMEWORK_EYEBROW}}</div>
+<h2>{{FRAMEWORK_TITLE}}</h2>
+<p class="sub">{{FRAMEWORK_SUBTITLE}}</p>
+</div>
+<section id="framework">
+<div style="margin-top: 14px;" class="grid grid-3">
+<article class="card">
+<h3>{{FW_1_TITLE}}</h3>
+<p>{{FW_1_TEXT}}</p>
+</article>
+<article class="card">
+<h3>{{FW_2_TITLE}}</h3>
+<p>{{FW_2_TEXT}}</p>
+</article>
+<article class="card">
+<h3>{{FW_3_TITLE}}</h3>
+<p>{{FW_3_TEXT}}</p>
+</article>
+</div>
+</section>
+<div class="divider"><br></div>
+<!-- ===== FAQ ===== -->
+<div style="--sec-img: url('{{FAQ_BANNER_IMAGE}}');" class="sec-banner">
+<div class="sec-eyebrow">{{FAQ_EYEBROW}}</div>
+<h2>{{FAQ_TITLE}}</h2>
+<p class="sub">{{FAQ_SUBTITLE}}</p>
+</div>
+<section id="faq">
+<div aria-label="Frequently asked questions" class="faq">
+<details>
+<summary>{{FAQ_Q1}} <span class="chev">⌄</span></summary>
+<p>{{FAQ_A1}}</p>
+</details>
+<details>
+<summary>{{FAQ_Q2}} <span class="chev">⌄</span></summary>
+<p>{{FAQ_A2}}</p>
+</details>
+<details>
+<summary>{{FAQ_Q3}} <span class="chev">⌄</span></summary>
+<p>{{FAQ_A3}}</p>
+</details>
+<details>
+<summary>{{FAQ_Q4}} <span class="chev">⌄</span></summary>
+<p>{{FAQ_A4}}</p>
+</details>
+</div>
+</section>
+<div class="divider"><br></div>
+<!-- ===== FINAL CTA ===== -->
+<div style="--sec-img: url('{{FINAL_BANNER_IMAGE}}');" class="sec-banner">
+<div class="sec-eyebrow">{{FINAL_EYEBROW}}</div>
+<h2>{{FINAL_TITLE}}</h2>
+<p class="sub">{{FINAL_SUBTITLE}}</p>
+</div>
+<section id="contact">
+<div class="final">
+<h2>{{FINAL_BOX_TITLE}}</h2>
+<p>{{FINAL_BOX_TEXT}}</p>
+<div style="justify-content: center;" class="cta"><a href="{{FINAL_PRIMARY_URL}}" class="btn btn-gold">{{FINAL_PRIMARY_LABEL}}</a> <a href="{{FINAL_SECONDARY_URL}}" class="btn">{{FINAL_SECONDARY_LABEL}}</a></div>
+<p style="opacity: .78; margin-top: 18px;">© <span id="wfl-year"></span> {{FOOTER_TEXT}}</p>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<!-- MOBILE STICKY CTA -->
+<div aria-label="Mobile call to action" role="region" class="sticky">
+<div class="sticky-inner"><a href="{{STICKY_URL}}" class="btn btn-gold">{{STICKY_LABEL}}</a></div>
+</div>
+<!-- COUNTERS + YEAR --> <script>
+    const y=document.getElementById('wfl-year');
+    if(y) y.textContent = new Date().getFullYear();
+
+    document.querySelectorAll('#akh-wfl [data-count]').forEach(el=>{
+      const end = parseFloat(el.dataset.count || "0") || 0;
+      const suf = el.dataset.suffix || "";
+      const dec = (String(end).includes('.') ? String(end).split('.')[1].length : 0);
+      const start = performance.now();
+      const dur = 1300;
+
+      function step(ts){
+        const p = Math.min((ts - start) / dur, 1);
+        const val = (end * p).toFixed(dec);
+        el.textContent = val + (p === 1 ? suf : "");
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  </script> <!-- SEO JSON-LD --> <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CaseStudy",
+    "name":"{{SEO_NAME}}",
+    "description":"{{SEO_DESCRIPTION}}",
+    "publisher":{"@type":"Organization","name":"{{SEO_PUBLISHER}}"},
+    "image":[
+      "{{SEO_IMAGE_1}}",
+      "{{SEO_IMAGE_2}}"
+    ],
+    "url":"{{SEO_URL}}"
+  }
+  </script></section>
