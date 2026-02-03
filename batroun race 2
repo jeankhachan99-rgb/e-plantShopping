@@ -1,0 +1,1168 @@
+<!-- ============================================================
+BATROUN RACE 2026 — MEGA ONE-PAGE (FULL SCREEN HERO SLIDESHOW)
+Shopify-safe • Scoped CSS • No external libs
+Includes:
+Hero slideshow + KPI + Highlights + Tabs + Logo wall + Belt + Spotlight
+Framework + Storytelling + Deliverables + Attribution + Validation
+ROI vs Paid Ads + 3-Year Growth + Exclusivity + Final CTA Photo
+=============================================================== -->
+<style>
+  /* =========================
+     ROOT / FULL-WIDTH WRAP
+     ========================= */
+  #brMega2026{
+    --navy:#0c1426;--navy2:#0e1a33;--aqua:#3dd6c6;--aqua2:#21b3a7;
+    --ink:#e9f2ff;--muted:#9aa6b2;
+    --line:rgba(255,255,255,.14);
+    --card:rgba(8,18,37,.78);
+    --card2:rgba(8,18,37,.55);
+    --shadow:0 32px 90px rgba(0,0,0,.65);
+
+    width:100vw; position:relative; left:50%; right:50%;
+    margin-left:-50vw; margin-right:-50vw;
+
+    background:
+      radial-gradient(1100px 740px at 12% -10%, rgba(61,214,198,.16), transparent 65%),
+      radial-gradient(1200px 820px at 92% 120%, rgba(33,179,167,.12), transparent 60%),
+      linear-gradient(180deg,var(--navy),var(--navy2));
+    color:var(--ink);
+    font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto;
+    isolation:isolate;
+    overflow:hidden;
+  }
+  #brMega2026 *{box-sizing:border-box}
+  #brMega2026 a{text-decoration:none;color:inherit}
+  #brMega2026 img{max-width:100%;display:block}
+  #brMega2026 .wrap{max-width:1320px;margin:0 auto;position:relative;z-index:2;padding:0 18px}
+
+  #brMega2026:before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 1.8px);
+    background-size:34px 34px; opacity:.10;
+    mask-image:radial-gradient(900px 620px at 50% 12%, #000 55%, transparent 92%);
+    pointer-events:none;
+  }
+
+  /* Headings */
+  #brMega2026 h1,#brMega2026 h2,#brMega2026 h3,#brMega2026 h4{margin:0 0 10px;font-weight:950;color:#fff}
+  #brMega2026 h1{font-size:clamp(32px,4.2vw,64px);line-height:1.05}
+  #brMega2026 h2{font-size:clamp(22px,3.2vw,42px);line-height:1.15}
+  #brMega2026 h3{font-size:1.08rem;color:var(--aqua)}
+  #brMega2026 h4{font-size:1.02rem;color:#fff}
+  #brMega2026 p{margin:0 0 10px;color:rgba(233,242,255,.82)}
+  #brMega2026 .sub{max-width:1040px;color:#d6e5f8}
+  #brMega2026 .muted{color:rgba(233,242,255,.78)}
+  #brMega2026 .headline{
+    background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 20px rgba(61,214,198,.25);
+  }
+
+  /* HR */
+  #brMega2026 .hr{
+    height:1px;margin:40px 0;
+    background:linear-gradient(90deg,transparent,rgba(61,214,198,.75),transparent);
+    border-radius:1px
+  }
+
+  /* Badges / chips */
+  #brMega2026 .kicker{
+    display:flex;align-items:center;gap:10px;
+    text-transform:uppercase;letter-spacing:.18em;
+    font-weight:950;font-size:.78rem;
+    color:rgba(233,242,255,.92);
+  }
+  #brMega2026 .kicker:before{
+    content:""; width:10px;height:10px;border-radius:50%;
+    background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+    box-shadow:0 0 0 6px rgba(61,214,198,.14);
+  }
+  #brMega2026 .pillRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  #brMega2026 .pill{
+    padding:8px 12px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.20);
+    background:rgba(61,214,198,.10);
+    color:var(--ink);font-weight:900;font-size:.82rem;
+  }
+  #brMega2026 .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.22);
+    background:rgba(61,214,198,.10);
+    color:var(--ink);
+    font-weight:950;font-size:.78rem;
+    width:max-content;
+    margin-bottom:8px;
+  }
+
+  /* Buttons */
+  #brMega2026 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+  #brMega2026 .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:13px 18px;border-radius:16px;
+    border:1px solid rgba(61,214,198,.55);
+    font-weight:950;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    cursor:pointer;
+  }
+  #brMega2026 .btn.primary{
+    background:linear-gradient(180deg,var(--aqua),var(--aqua2));
+    color:#061218;
+    box-shadow:0 22px 48px rgba(61,214,198,.35);
+    border-color:transparent;
+  }
+  #brMega2026 .btn.primary:hover{transform:translateY(-2px);box-shadow:0 30px 70px rgba(61,214,198,.55)}
+  #brMega2026 .btn.outline{background:transparent;color:var(--ink)}
+  #brMega2026 .btn.outline:hover{background:rgba(61,214,198,.12)}
+  #brMega2026 .btn.ghost{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.18)}
+  #brMega2026 .btn.ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(61,214,198,.45)}
+
+  /* =========================
+     FULL SCREEN HERO SLIDESHOW
+     ========================= */
+  #brMega2026 .heroFull{
+    position:relative;
+    min-height:92svh;
+    display:flex;
+    align-items:flex-end;
+    padding:26px 0 26px;
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  #brMega2026 .heroStage{
+    position:absolute; inset:0;
+    background:#071022;
+  }
+  #brMega2026 .heroSlides{
+    position:absolute; inset:0;
+  }
+  #brMega2026 .heroSlide{
+    position:absolute; inset:0;
+    opacity:0;
+    transition:opacity .85s ease;
+    transform:scale(1.02);
+  }
+  #brMega2026 .heroSlide.isOn{opacity:1}
+  #brMega2026 .heroSlide img{
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center 35%;
+    filter:saturate(1.05) contrast(1.05) brightness(.86);
+  }
+  #brMega2026 .heroStage:after{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(900px 520px at 20% 18%, rgba(61,214,198,.20), transparent 60%),
+      linear-gradient(180deg, rgba(0,0,0,.10), rgba(12,20,38,.92));
+    pointer-events:none;
+  }
+
+  /* hero overlay card like screenshot */
+  #brMega2026 .heroCard{
+    position:relative;
+    z-index:2;
+    border-radius:28px;
+    padding:26px;
+    background:rgba(8,18,37,.62);
+    border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 30px 120px rgba(0,0,0,.60);
+    backdrop-filter:blur(12px);
+    max-width:1200px;
+  }
+  @media(min-width:980px){
+    #brMega2026 .heroCard{padding:30px}
+  }
+
+  /* hero top chips row */
+  #brMega2026 .heroTopRow{
+    display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+    margin-bottom:14px;
+  }
+  #brMega2026 .heroChip{
+    padding:8px 12px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.06);
+    font-weight:900;font-size:.82rem;
+    display:inline-flex;gap:8px;align-items:center;
+  }
+  #brMega2026 .heroChip b{color:var(--aqua)}
+  #brMega2026 .heroLead{
+    margin-top:8px;
+    color:rgba(233,242,255,.88);
+    font-size:1.02rem;
+  }
+
+  /* hero controls */
+  #brMega2026 .heroControls{
+    position:absolute;
+    top:16px; right:16px;
+    display:flex; gap:10px;
+    z-index:3;
+  }
+  #brMega2026 .hBtn{
+    width:42px;height:42px;border-radius:14px;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(8,18,37,.72);
+    color:#dfe7f2;
+    cursor:pointer;
+    transition:.18s ease;
+  }
+  #brMega2026 .hBtn:hover{transform:translateY(-2px);border-color:rgba(61,214,198,.7);background:rgba(61,214,198,.08)}
+  #brMega2026 .heroDots{
+    position:absolute; left:18px; top:18px;
+    display:flex;gap:8px; z-index:3;
+  }
+  #brMega2026 .heroDot{
+    width:8px;height:8px;border-radius:999px;
+    background:rgba(255,255,255,.35);
+    border:1px solid rgba(255,255,255,.55);
+    cursor:pointer;
+  }
+  #brMega2026 .heroDot[aria-current="true"]{background:var(--aqua);border-color:var(--aqua)}
+
+  /* KPIs */
+  #brMega2026 .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+  @media(max-width:980px){#brMega2026 .kpis{grid-template-columns:repeat(2,1fr)}}
+  #brMega2026 .kpi{
+    padding:12px;border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;background:rgba(255,255,255,.04);
+    text-align:center; box-shadow:0 14px 44px rgba(0,0,0,.35);
+  }
+  #brMega2026 .num{font-weight:950;font-size:1.32rem}
+  #brMega2026 .lab{font-size:.85rem;color:var(--muted);font-weight:800}
+
+  /* =========================
+     CONTENT CONTAINERS
+     ========================= */
+  #brMega2026 .sectionPad{padding:58px 0 92px}
+  #brMega2026 .block{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.02);
+    border-radius:24px;
+    padding:18px;
+    box-shadow:0 18px 70px rgba(0,0,0,.35);
+  }
+
+  /* ===== Highlights slider ===== */
+  #brMega2026 .slider{
+    position:relative;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+  }
+  #brMega2026 .slides{
+    display:flex;gap:14px;
+    padding:16px;
+    overflow:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(61,214,198,.55) transparent;
+  }
+  #brMega2026 .slides::-webkit-scrollbar{height:10px}
+  #brMega2026 .slides::-webkit-scrollbar-thumb{background:rgba(61,214,198,.40);border-radius:999px}
+  #brMega2026 .slide{
+    min-width:min(820px,92vw);
+    scroll-snap-align:start;
+    border-radius:20px;
+    background:
+      radial-gradient(700px 320px at 20% 0%, rgba(61,214,198,.14), transparent 60%),
+      radial-gradient(700px 320px at 90% 120%, rgba(33,179,167,.10), transparent 60%),
+      var(--card);
+    border:1px solid rgba(255,255,255,.10);
+    padding:18px;
+    display:grid;
+    gap:10px;
+  }
+  #brMega2026 .label{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.22);
+    background:rgba(61,214,198,.10);
+    color:var(--ink);
+    font-weight:950;font-size:.78rem;
+    width:max-content;
+  }
+  #brMega2026 .media{
+    margin-top:6px;border-radius:16px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.03);
+  }
+  #brMega2026 .media img{width:100%;height:360px;object-fit:cover;display:block}
+  @media(max-width:640px){ #brMega2026 .media img{height:240px} }
+
+  #brMega2026 .navBtn{
+    position:absolute; top:14px;
+    width:42px;height:42px;border-radius:14px;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(8,18,37,.72);
+    color:var(--ink);
+    cursor:pointer;
+    transition:transform .18s ease, border-color .18s ease, background .18s ease;
+    z-index:3;
+  }
+  #brMega2026 .navBtn:hover{transform:translateY(-2px); border-color:rgba(61,214,198,.7); background:rgba(61,214,198,.08)}
+  #brMega2026 .navPrev{right:66px}
+  #brMega2026 .navNext{right:16px}
+
+  /* ===== Tabs ===== */
+  #brMega2026 .tabs{
+    display:flex;flex-wrap:nowrap;gap:10px;
+    overflow:auto;-webkit-overflow-scrolling:touch;
+    padding:12px 2px;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(61,214,198,.55) transparent;
+  }
+  #brMega2026 .tabs::-webkit-scrollbar{height:10px}
+  #brMega2026 .tabs::-webkit-scrollbar-thumb{background:rgba(61,214,198,.40);border-radius:999px}
+  #brMega2026 .tab{
+    flex:0 0 auto;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.03);
+    color:var(--ink);
+    padding:10px 14px;border-radius:999px;
+    font-weight:950;font-size:.9rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  #brMega2026 .tab[aria-selected="true"]{background:rgba(61,214,198,.12);border-color:rgba(61,214,198,.7)}
+
+  /* ===== Logo wall ===== */
+  #brMega2026 .sTop{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  #brMega2026 .sWall{display:grid;gap:14px;margin-top:12px;grid-template-columns:repeat(6,1fr)}
+  @media(max-width:1100px){#brMega2026 .sWall{grid-template-columns:repeat(4,1fr)}}
+  @media(max-width:680px){#brMega2026 .sWall{grid-template-columns:repeat(2,1fr)}}
+  #brMega2026 .sTile{
+    position:relative;border-radius:18px;border:1px solid rgba(255,255,255,.14);
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    box-shadow:0 14px 44px rgba(0,0,0,.35);
+    overflow:hidden;padding:14px;aspect-ratio:1/1;
+    display:grid;place-items:center;transition:.22s ease;
+  }
+  #brMega2026 .sTile:before{
+    content:"";position:absolute; inset:-30%;
+    background:radial-gradient(circle at 30% 20%, rgba(61,214,198,.22), transparent 52%);
+    opacity:.7;pointer-events:none;
+  }
+  #brMega2026 .sTile:hover{transform:translateY(-3px);border-color:rgba(61,214,198,.7);box-shadow:0 26px 90px rgba(61,214,198,.16)}
+  #brMega2026 .sTile img{width:78%;height:78%;object-fit:contain;filter:grayscale(100%) brightness(.95);opacity:.95;transition:.22s;position:relative;z-index:2}
+  #brMega2026 .sTile:hover img{filter:none;opacity:1}
+  #brMega2026 .sName{
+    position:absolute;left:10px;bottom:10px;
+    padding:6px 10px;border-radius:12px;
+    font-weight:950;font-size:.82rem;
+    background:rgba(2,10,22,.55);
+    border:1px solid rgba(255,255,255,.16);
+    z-index:3;
+  }
+
+  /* ===== Autoscroll belt ===== */
+  #brMega2026 .belt{
+    border-radius:22px;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    box-shadow:0 18px 70px rgba(0,0,0,.35);
+    overflow:hidden; position:relative; margin-top:12px;
+  }
+  #brMega2026 .belt:after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(12,20,38,.98), transparent 16%, transparent 84%, rgba(12,20,38,.98));
+    pointer-events:none;
+  }
+  #brMega2026 .beltTrack{display:flex;gap:14px;padding:14px;align-items:center;will-change:transform}
+  #brMega2026 .beltTile{
+    flex:0 0 auto;width:210px;height:84px;border-radius:16px;
+    border:1px solid rgba(255,255,255,.14);
+    background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    display:flex;align-items:center;justify-content:center;
+    transition:.2s ease;box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  #brMega2026 .beltTile:hover{transform:translateY(-2px);border-color:rgba(61,214,198,.7)}
+  #brMega2026 .beltTile img{width:76%;height:76%;object-fit:contain;filter:grayscale(100%) brightness(.95);opacity:.95;transition:.2s}
+  #brMega2026 .beltTile:hover img{filter:none;opacity:1}
+
+  /* ===== Spotlight ===== */
+  #brMega2026 .spot{
+    position:relative;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    border-radius:22px;overflow:hidden;
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+    margin-top:12px;
+  }
+  #brMega2026 .spot-track{display:flex;transition:transform .55s cubic-bezier(.22,.8,.2,1)}
+  #brMega2026 .spot-slide{
+    min-width:100%;
+    display:grid;gap:16px;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    padding:18px;
+  }
+  @media(max-width:900px){#brMega2026 .spot-slide{grid-template-columns:1fr}}
+  #brMega2026 .visual{
+    position:relative;min-height:300px;border:1px solid rgba(255,255,255,.14);
+    border-radius:18px;overflow:hidden;background:#091328;box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  #brMega2026 .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.04) saturate(1.05) brightness(.93)}
+  #brMega2026 .miniChip{
+    padding:7px 10px;border-radius:999px;border:1px solid rgba(61,214,198,.22);
+    background:rgba(61,214,198,.10);font-weight:950;font-size:.78rem;width:max-content;
+  }
+  #brMega2026 .spot .dots{display:flex;gap:8px;position:absolute;left:14px;top:14px}
+  #brMega2026 .spot .dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.55);cursor:pointer}
+  #brMega2026 .spot .dot[aria-current="true"]{background:var(--aqua);border-color:var(--aqua)}
+  #brMega2026 .spot .arrows{display:flex;gap:8px;position:absolute;right:14px;top:12px}
+  #brMega2026 .spot .arrow{
+    width:42px;height:42px;display:grid;place-items:center;border-radius:14px;
+    background:rgba(8,18,37,.72);border:1px solid rgba(255,255,255,.18);color:#dfe7f2;cursor:pointer;
+    transition:.18s ease;
+  }
+  #brMega2026 .spot .arrow:hover{transform:translateY(-2px);border-color:rgba(61,214,198,.7);background:rgba(61,214,198,.08)}
+
+  /* ===== Big content cards (framework/story etc) ===== */
+  #brMega2026 .wideGrid{display:grid;gap:14px}
+  @media(min-width:980px){#brMega2026 .wideGrid{grid-template-columns:1fr 1fr;gap:16px}}
+  #brMega2026 .cardWide{
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+    transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    display:grid;
+    grid-template-columns:170px 1fr;
+    min-height:180px;
+  }
+  #brMega2026 .cardWide:hover{
+    transform:translateY(-3px);
+    border-color:rgba(61,214,198,.7);
+    box-shadow:0 26px 90px rgba(61,214,198,.16);
+  }
+  @media(max-width:560px){#brMega2026 .cardWide{grid-template-columns:1fr}}
+  #brMega2026 .thumb{position:relative;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.10)}
+  @media(max-width:560px){#brMega2026 .thumb{border-right:0;border-bottom:1px solid rgba(255,255,255,.10)}}
+  #brMega2026 .thumb img{width:100%;height:100%;object-fit:cover}
+  #brMega2026 .thumb:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.35));pointer-events:none}
+  #brMega2026 .body{padding:16px 16px 14px}
+  #brMega2026 .tagrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+  #brMega2026 .tag{
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(61,214,198,.18);
+    background:rgba(61,214,198,.10);
+    color:var(--ink);
+    font-weight:950;font-size:.76rem;
+  }
+  #brMega2026 .list{margin:10px 0 0;padding-left:1.1rem}
+  #brMega2026 .list li{margin:6px 0;color:rgba(233,242,255,.82)}
+
+  /* Partner grid */
+  #brMega2026 .pGrid{display:grid;gap:14px;margin-top:12px}
+  @media(min-width:980px){#brMega2026 .pGrid{grid-template-columns:1fr 1fr}}
+  #brMega2026 .pCard{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    border-radius:18px;
+    padding:16px;
+    box-shadow:0 12px 40px rgba(0,0,0,.28);
+  }
+  #brMega2026 .pill2{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 10px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.03);
+    font-weight:900;font-size:.8rem;color:var(--ink);
+  }
+
+  /* CTA Photo */
+  #brMega2026 .ctaPhoto{
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+    overflow:hidden;
+    display:grid;
+  }
+  @media(min-width:980px){#brMega2026 .ctaPhoto{grid-template-columns:1fr 1fr}}
+  #brMega2026 .ctaImg{position:relative;min-height:380px;background:#000}
+  #brMega2026 .ctaImg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  #brMega2026 .ctaImg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,20,38,.08),rgba(12,20,38,.88))}
+  #brMega2026 .ctaBody{
+    padding:22px;
+    background:
+      radial-gradient(circle at 0 0,rgba(61,214,198,.16),transparent 55%),
+      radial-gradient(circle at 100% 110%,rgba(33,179,167,.10),transparent 60%),
+      var(--card);
+    display:flex;flex-direction:column;justify-content:center;gap:10px;
+  }
+
+  /* Footer CTA */
+  #brMega2026 .footCTA{
+    margin-top:36px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.03);
+    border-radius:24px;
+    padding:22px;
+    box-shadow:0 18px 70px rgba(0,0,0,.45);
+    text-align:center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    #brMega2026 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+<section id="brMega2026" aria-label="Batroun Race 2026 Mega Page"><!-- =========================
+       HERO FULL SCREEN SLIDESHOW
+       ========================= --><header class="heroFull" id="brHeroFull">
+<div class="heroStage" aria-hidden="true">
+<div class="heroSlides" id="heroSlides"></div>
+<div class="heroDots" id="heroDots" aria-label="Hero dots"></div>
+<div class="heroControls" aria-label="Hero arrows"><button class="hBtn" id="heroPrev" aria-label="Previous">‹</button> <button class="hBtn" id="heroNext" aria-label="Next">›</button></div>
+</div>
+<div class="wrap">
+<div class="heroCard">
+<h1><span class="headline">Batroun Race .</span></h1>
+<p data-start="126" data-end="345"><strong data-start="126" data-end="142">Batroun Race</strong> started in 2025 with its first edition welcoming <strong data-start="192" data-end="212">550 participants</strong> from different ages and fitness levels. The event brought energy, excitement, and a strong running spirit to the streets of Batroun.</p>
+<p data-start="347" data-end="535">Later in 2025, the second edition was held as a <strong data-start="395" data-end="414">Run for a Cause</strong>, bringing the community together to support a meaningful cause and show the true power of sport, unity, and giving back.</p>
+<div class="cta"><br><a class="btn outline" href="https://www.batrounrace.com/pages/contact">Contact Team</a> <a class="btn ghost" href="#brCat-wall">Sponsors &amp; Partners</a></div>
+</div>
+</div>
+</header><!-- =========================
+       PAGE BODY
+       ========================= -->
+<div class="sectionPad">
+<div class="wrap"><!-- HIGHLIGHTS -->
+<section aria-label="Sponsor highlights"><span class="badge">Sponsor Highlights</span>
+<h2>What makes this sponsorship perform</h2>
+<p class="sub">A performance-first sponsorship model: dwell time, frequency, functional integration, content value, and attribution.</p>
+<div class="slider" id="brHighlights" data-autoplay="true" data-interval="3600"><button aria-label="Previous highlight" type="button" class="navBtn navPrev" id="hlPrev">‹</button> <button aria-label="Next highlight" type="button" class="navBtn navNext" id="hlNext">›</button>
+<div class="slides" id="hlTrack">
+<article class="slide"><span class="label">On-ground • Dwell Time</span>
+<h3>Extended exposure where people stay</h3>
+<p>Start/finish + hydration zones create high dwell time and repeated contact — stronger recall than scroll-based exposure.</p>
+<div class="media"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932" alt="Start line visibility" loading="lazy"></div>
+</article>
+<article class="slide"><span class="label">Content • Reuse Value</span>
+<h3>Content that keeps circulating</h3>
+<p>Reels, stories, recap edits, photography, and creator-led UGC — turning race day into a multi-week media asset.</p>
+<div class="media"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/race_day.jpg?v=1760001249" alt="Community moments" loading="lazy"></div>
+</article>
+<article class="slide"><span class="label">Attribution • Reporting</span>
+<h3>Trackable ROI (QR + UTM)</h3>
+<p>Unique sponsor QR codes + UTM links + engagement metrics — then a clear ROI report delivered within 7 days.</p>
+<div class="media"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/finish_line.jpg?v=1760001347" alt="Finish line" loading="lazy"></div>
+</article>
+</div>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- TABS -->
+<section aria-label="Browse pitch sections"><span class="badge">Explore</span>
+<h2>Browse the pitch</h2>
+<p class="sub">Tap a category to jump. Smooth scroll like your screenshots.</p>
+<div class="tabs" role="tablist" aria-label="Pitch categories"><button data-jump="wall" aria-selected="true" role="tab" type="button" class="tab">Logo Wall</button> <button data-jump="belt" aria-selected="false" role="tab" type="button" class="tab">Logo Belt</button> <button data-jump="spotlight" aria-selected="false" role="tab" type="button" class="tab">Spotlight</button> <button data-jump="framework" aria-selected="false" role="tab" type="button" class="tab">ROI Framework</button> <button data-jump="story" aria-selected="false" role="tab" type="button" class="tab">Storytelling</button> <button data-jump="receive" aria-selected="false" role="tab" type="button" class="tab">Deliverables</button> <button data-jump="attr" aria-selected="false" role="tab" type="button" class="tab">Attribution</button> <button data-jump="validation" aria-selected="false" role="tab" type="button" class="tab">Validation</button> <button data-jump="roi" aria-selected="false" role="tab" type="button" class="tab">ROI vs Paid Ads</button> <button data-jump="growth" aria-selected="false" role="tab" type="button" class="tab">3-Year Growth</button> <button data-jump="exclusivity" aria-selected="false" role="tab" type="button" class="tab">Exclusivity</button> <button data-jump="cta" aria-selected="false" role="tab" type="button" class="tab">Call to Action</button></div>
+</section>
+<div class="hr"><br></div>
+<!-- LOGO WALL -->
+<section id="brCat-wall" class="block" aria-label="Logo wall">
+<h3>Explore the press and story behind last year’s successful race.</h3>
+<div class="belt" id="brBelt">
+<div class="beltTrack" id="brBeltTrack"></div>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- SPOTLIGHT -->
+<section id="brCat-spotlight" class="block" aria-label="Spotlight"><span class="badge">Sponsor Spotlight</span>
+<h2>Featured Partner Stories</h2>
+<p class="sub">Priority sponsors are highlighted with role definition, functional value, and narrative ownership.</p>
+<section class="spot" id="brSpot" data-autoplay="true" data-interval="3200" aria-label="Spotlight carousel">
+<div class="spot-track" id="spotTrack"></div>
+<div class="dots" id="spotDots" role="tablist" aria-label="Spotlight dots"></div>
+<div class="arrows"><button class="arrow" id="spotPrev" aria-label="Previous">‹</button> <button class="arrow" id="spotNext" aria-label="Next">›</button></div>
+</section>
+</section>
+<div class="hr"><br></div>
+<!-- FRAMEWORK -->
+<section id="brCat-framework" class="block" aria-label="Framework"><span class="badge">Our Sponsorship Framework</span>
+<h2>How Sponsor Value Is Created</h2>
+<p class="sub">Five commercial drivers reflecting how CMOs and finance teams assess ROI.</p>
+<div class="wideGrid">
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/race_day.jpg?v=1760001249" alt="Dwell time and audience" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">Reach</span><span class="tag">Dwell Time</span><span class="tag">Recall</span></div>
+<h3>1) Audience Reach &amp; Dwell Time</h3>
+<ul class="list">
+<li>Hours on-site, not fleeting impressions</li>
+<li>High dwell time at start/finish, hydration, checkpoints</li>
+<li>Repeated visual contact along the route</li>
+</ul>
+<p class="muted"><b>Business insight:</b> Brands are remembered where people stay — not where they scroll.</p>
+</div>
+</article>
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932" alt="Frequency exposure" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">Frequency</span><span class="tag">Repetition</span><span class="tag">Association</span></div>
+<h3>2) Frequency of Brand Exposure</h3>
+<ul class="list">
+<li>Route branding repeated across kilometers</li>
+<li>Hydration encountered multiple times</li>
+<li>Jerseys worn during and after the event</li>
+<li>Finish-line backdrops in photos/videos</li>
+</ul>
+<p class="muted"><b>Business insight:</b> High-frequency exposure increases recall and association.<span class="tag"></span></p>
+</div>
+</article>
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/finish_line.jpg?v=1760001347" alt="Content engine" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">Content</span><span class="tag">Reuse</span><span class="tag">Long-tail</span></div>
+<h3>4) Content Value &amp; Reuse Potential</h3>
+<ul class="list">
+<li>Reels &amp; stories</li>
+<li>Professional photos &amp; recap videos</li>
+<li>Creator-led UGC and branded moments</li>
+<li>Sponsor-owned assets for reuse</li>
+</ul>
+<p class="muted"><b>Business insight:</b> Reusable content turns one day into multi-week media value.</p>
+</div>
+</article>
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium.jpg?v=1760000577" alt="Attribution and reporting" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">QR</span><span class="tag">UTM</span><span class="tag">Reporting</span></div>
+<h3>5) Attribution &amp; Reporting Depth</h3>
+<ul class="list">
+<li>Unique QR codes per sponsor</li>
+<li>UTM-tagged links</li>
+<li>Engagement + interaction metrics</li>
+<li><b>ROI snapshot delivered within 7 days</b></li>
+</ul>
+<p class="muted"><b>Business insight:</b> Attribution turns sponsorship into a defendable investment.</p>
+</div>
+</article>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- STORY -->
+<section id="brCat-story" class="block" aria-label="Storytelling"><span class="badge">Storytelling Model</span>
+<h2>How Brands Are Remembered</h2>
+<p class="sub">Sponsors are integrated into the runner journey and community narratives — creating association, not interruption.</p>
+<p class="sub">&nbsp;</p>
+<div class="wideGrid">
+<article class="cardWide">
+<div class="body">
+<div class="tagrow"><span class="tag">Journey</span><span class="tag">Utility</span><span class="tag">Performance</span></div>
+<h3>The Runner Journey</h3>
+<p>Hydration, energy, recovery, payment, and discovery become branded touchpointsR touchpoints that feel useful and trusted.</p>
+</div>
+</article>
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/finish_line.jpg?v=1760001347" alt="Emotional moments" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">Emotion</span><span class="tag">Moments</span><span class="tag">Memory</span></div>
+<h3>Emotional Moments</h3>
+<p>Start, struggle, finish, celebration — sponsors appear where emotions are strongest, driving deeper recall.</p>
+</div>
+</article>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- RECEIVE -->
+<section id="brCat-receive" class="block" aria-label="Deliverables"><span class="badge">What Sponsors Receive</span>
+<h2>Guaranteed assets + reporting</h2>
+<div class="wideGrid">
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932" alt="Brand assets" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">Jerseys</span><span class="tag">Arches</span><span class="tag">Route</span><span class="tag">Backdrops</span></div>
+<h3>On-ground visibility</h3>
+<ul class="list">
+<li>Co-branded jerseys (where applicable)</li>
+<li>Start &amp; finish arches</li>
+<li>KM markers &amp; route flags</li>
+<li>Hydration zones + finish-line photo walls</li>
+<li>Flyers across cafés, gyms, hotels, Souks</li>
+</ul>
+</div>
+</article>
+<article class="cardWide">
+<div class="thumb"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium.jpg?v=1760000577" alt="Reporting and attribution" loading="lazy"></div>
+<div class="body">
+<div class="tagrow"><span class="tag">QR</span><span class="tag">UTM</span><span class="tag">Leads</span><span class="tag">ROI Report</span></div>
+<h3>Measurement &amp; reporting</h3>
+<ul class="list">
+<li>QR &amp; UTM tracking per sponsor</li>
+<li>Engagement + interaction metrics</li>
+<li>Lead capture &amp; redemptions (where applicable)</li>
+<li><b>ROI snapshot within 7 days</b></li>
+</ul>
+</div>
+</article>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- ATTR -->
+<section id="brCat-attr" class="block" aria-label="Attribution"><span class="badge">Attribution &amp; Reporting</span>
+<h2>How performance is proven — not assumed</h2>
+<p class="sub">Sponsors receive clear performance visibility enabling internal justification and renewals.</p>
+<div class="wideGrid" style="grid-template-columns: 1fr;">
+<article class="cardWide" style="grid-template-columns: 1fr;">
+<div class="body">
+<div class="tagrow"><span class="tag">Unique QR codes</span><span class="tag">UTM links</span><span class="tag">Engagement</span><span class="tag">Benchmarks</span></div>
+<ul class="list">
+<li>Unique QR codes per sponsor</li>
+<li>UTM-tagged digital links</li>
+<li>Content reach + engagement metrics</li>
+<li>Lead capture and redemptions (where applicable)</li>
+<li>Comparison vs paid media performance</li>
+<li>ROI report delivered within 7 days</li>
+</ul>
+</div>
+</article>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- VALIDATION -->
+<section id="brCat-validation" class="block" aria-label="Validation"><span class="badge">Performance Validation</span>
+<h2>Proof that the model works</h2>
+<p class="sub">Validated outcome examples demonstrating engagement, recall, and conversion potential.</p>
+<div class="wideGrid" style="grid-template-columns: 1fr;">
+<article class="cardWide" style="grid-template-columns: 1fr;">
+<div class="body">
+<h3 style="color: #fff;">Hydration Partner</h3>
+<p>4 hydration stations • 3,000+ samples distributed • 420K+ video views • 1.9% CTR to brand page</p>
+</div>
+</article>
+<article class="cardWide" style="grid-template-columns: 1fr;">
+<div class="body">
+<h3 style="color: #fff;">Retail / Lifestyle Partner</h3>
+<p>Expo activation + finish-line wall • 2,300 QR scans • 1,500+ captured leads</p>
+</div>
+</article>
+<article class="cardWide" style="grid-template-columns: 1fr;">
+<div class="body">
+<h3 style="color: #fff;">Media Partner</h3>
+<p>Live stories + recap reels • 230K reach • 1,800 shares of finish-line content</p>
+</div>
+</article>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- ROI -->
+<section id="brCat-roi" class="block" aria-label="ROI vs paid ads"><span class="badge">ROI vs Paid Ads</span>
+<h2>Why this outperforms static media</h2>
+<div class="wideGrid">
+<article class="cardWide" style="grid-template-columns: 1fr;">
+<div class="body">
+<div class="tagrow"><span class="tag">Paid Ads</span><span class="tag">One-way</span><span class="tag">Stops with spend</span></div>
+<ul class="list">
+<li>One-way exposure</li>
+<li>Rising CPMs</li>
+<li>Exposure stops when spend stops</li>
+</ul>
+</div>
+</article>
+<article class="cardWide" style="grid-template-columns: 1fr;">
+<div class="body">
+<div class="tagrow"><span class="tag">Batroun Race</span><span class="tag">Multi-touch</span><span class="tag">Long-tail</span></div>
+<ul class="list">
+<li>Multi-touch exposure (route + moments)</li>
+<li>Physical + digital engagement</li>
+<li>Content reuse value</li>
+<li>Measurable attribution + reporting</li>
+</ul>
+<p class="muted"><b>Conclusion:</b> Batroun Race functions as both a media channel and a content engine.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- GROWTH -->
+<div class="hr"><br></div>
+<!-- EXCLUSIVITY -->
+<section id="brCat-exclusivity" class="block" aria-label="Exclusivity"><span class="badge">Category Exclusivity &amp; Pricing Logic</span>
+<h2>One brand per category</h2>
+<p class="sub">Exclusivity protects sponsor investment and maximizes recall. Pricing reflects attention, frequency, function, content reuse, and attribution depth.</p>
+<div class="pGrid">
+<div class="pCard">
+<h3>Category Exclusivity</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;"><span class="pill2">Hydration</span> <span class="pill2">Electrolytes</span> <span class="pill2">Energy</span> <span class="pill2">Payments</span> <span class="pill2">Media</span> <span class="pill2">Retail &amp; Lifestyle</span></div>
+</div>
+<div class="pCard">
+<h3>Pricing Logic</h3>
+<ul class="list">
+<li>Audience reach &amp; dwell time</li>
+<li>Exposure frequency</li>
+<li>Functional integration (utility)</li>
+<li>Content reuse value</li>
+<li>Attribution &amp; reporting depth</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="hr"><br></div>
+<!-- FINAL CTA PHOTO -->
+<section id="brCat-cta" class="block" aria-label="Final CTA"><span class="badge">Call to Action</span>
+<div class="ctaPhoto">
+<div class="ctaImg"><img src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932" alt="Become a sponsor — Batroun Race 2026" loading="lazy"></div>
+<div class="ctaBody">
+<div class="kicker">Become a Sponsor or Partner</div>
+<h2 class="headline">Visibility with accountability</h2>
+<p class="sub">Partnerships built on social proof, storytelling, metrics, and performance validation. Request the deck or speak with our team to design a custom ROI-focused partnership.</p>
+<p class="muted" style="margin-top: 6px;"><b>Email:</b> <a href="mailto:Batrounrace@gmail.com" style="text-decoration: underline;">Batrounrace@gmail.com</a><br><b>WhatsApp:</b> <a href="https://wa.me/96181300625" style="text-decoration: underline;">+961 81 300 625</a></p>
+<div class="cta"><a class="btn primary" href="https://www.batrounrace.com/pages/contact">Contact for Sponsorship</a> <a class="btn outline" href="mailto:Batrounrace@gmail.com?subject=Batroun%20Race%202026%20Sponsorship%20Deck%20Request">Request Deck</a> <a class="btn ghost" href="https://www.batrounrace.com/pages/about-batroun-race">About Batroun Race</a></div>
+</div>
+</div>
+<div class="footCTA">
+<h2>Ready to Partner?</h2>
+<p>Clear commercial terms • Defined deliverables • Professional execution • Transparent reporting</p>
+<div class="cta" style="justify-content: center;"><a class="btn primary" href="https://www.batrounrace.com/pages/contact">Contact Us</a> <a class="btn outline" href="https://www.batrounrace.com/pages/pages-sponsors-partners">Sponsors &amp; Partners</a></div>
+</div>
+</section>
+</div>
+</div>
+<script>
+    (function(){
+      const root = document.getElementById('brMega2026');
+      if(!root) return;
+
+      /* =========================
+         DATA
+         ========================= */
+      const hero = [
+        {img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Batroun_Race_Starting_Line.jpg?v=1767793635", alt:"Batroun Race starting line"},
+        {img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932", alt:"Start line wide"},
+        {img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/finish_line.jpg?v=1760001347", alt:"Finish line moment"}
+      ];
+
+      const sponsors = [
+           {name:"Fajo_Bel_Souk", site:"https://www.tiktok.com/@farhatfajloun", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Fajo_Bel_Souk.jpg?v=1768175798"},
+        {name:"Al_Khachan_Marketing_Agency", site:"https://www.alkhachan.com/pages/pages-marketing-agency-middle-east-al-khachan", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Al_Khachan_Marketing_Agency.jpg?v=1760943900"},
+        {name:"Aquafina", site:"https://www.aquafina.com/en-US/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/AQUAFINA.jpg?v=1759775548"},
+         {name:"GO_BATROUN", site:"https://gobatroun.com/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/GO_BATROUN.jpg?v=1760852967"},
+        {name:"AQUALAND_HOTEL", site:"https://www.aqualandbatroun.com/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/AQUALAND_HOTEL_RESORT.jpg?v=1760853115"},
+     {name:"Carita_Lebanon", site:"https://www.caritaslebanon.org/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Carita_Lebanon_youth.jpg?v=1760853161"},
+         {name:"hALLAB", site:"https://europe.hallab.com.lb/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/hALLAB_1881.jpg?v=1760870629"},
+{name:"ROUTES", site:"https://gobatroun.com/location/routes-bike-rental/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/ROUTES.jpg?v=1760853133"},
+        {name:"HAMAT", site:"https://en.wikipedia.org/wiki/Hamat", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/HAMAT.jpg?v=1760853062"},
+         {name:"Gatorade", site:"https://www.gatorade.com", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/GATORADE.jpg?v=1759775585"},
+        {name:"XXL Energy", site:"https://www.facebook.com/XXLEnergyLB/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/XXL_ENERY.jpg?v=1759775742"},
+        {name:"Whish Money", site:"https://whishmoneylebanon.com/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Whish_MoNEY.jpg?v=1759775521"},
+        {name:"Lebtivity", site:"https://www.lebtivity.com", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/lebtivity.jpg?v=1759775471"},
+        {name:"Footlab", site:"#", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/FOOTLAB.jpg?v=1759775398"},
+        {name:"Khoury Center", site:"#", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/KHOURY_SHOPPING_CENETER.jpg?v=1759775370"},
+        {name:"Merk", site:"https://merk-me.com/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/merK.jpg?v=1759775425"},
+        {name:"Batroun_Municipality", site:"https://www.instagram.com/batrounmunicipality/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/Batroun_Municipality.jpg?v=1768175496"},
+        {name:"Studio Jammal", site:"https://gobatroun.com/location/studio-jammal-s-a-r-l/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/STUDIO_JAMMAL.jpg?v=1759775659"},
+        {name:"Blue Bay", site:"https://blubaybatroun.com/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/BLUE_BAY.jpg?v=1759775706"},
+        {name:"Batroun Mountains", site:"http://batrounmountains.wine/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/BATROUN_MOUNTAINS.jpg?v=1760902144"}
+      ];
+
+      const spotlight = [
+        {name:"Aquafina", role:"Hydration Partner", copy:"Official hydration across the course. High dwell-time stations for performance and safety.", site:"https://www.aquafina.com/en-US/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/HANG_LOOSe2.jpg?v=1760000516"},
+        {name:"Gatorade", role:"Electrolyte Partner", copy:"Electrolyte support at key performance points, paired with strong content capture and reuse.", site:"https://www.gatorade.com", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/race_day.jpg?v=1760001249"},
+        {name:"XXL Energy", role:"Energy Partner", copy:"Powers atmosphere, crowd moments, and finish-line celebration — high-frequency exposure all day.", site:"https://www.facebook.com/XXLEnergyLB/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/start_line_2.jpg?v=1760000932"},
+        {name:"Lebtivity", role:"Media Partner", copy:"Discovery, live coverage, recap edits, and long-tail circulation across lifestyle audiences.", site:"https://www.lebtivity.com", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/finish_line.jpg?v=1760001347"},
+        {name:"Whish Money", role:"Payments Partner", copy:"Facilitates registration and on-site flow with clean tracking for performance reporting.", site:"https://whishmoneylebanon.com/", img:"https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium.jpg?v=1760000577"}
+      ];
+
+      /* =========================
+         HERO SLIDESHOW BUILD + AUTOPLAY
+         ========================= */
+      const heroSlides = root.querySelector('#heroSlides');
+      const heroDots  = root.querySelector('#heroDots');
+      const heroPrev  = root.querySelector('#heroPrev');
+      const heroNext  = root.querySelector('#heroNext');
+      const heroWrap  = root.querySelector('#brHeroFull');
+
+      let hi = 0, hTimer = null;
+      const hAuto = true;
+      const hInterval = 1000;
+
+      function heroPaintDots(){
+        if(!heroDots) return;
+        [...heroDots.children].forEach((d,k)=>d.setAttribute('aria-current', k===hi));
+      }
+      function heroGo(n){
+        const len = hero.length || 1;
+        hi = (n + len) % len;
+        [...heroSlides.children].forEach((s,k)=>s.classList.toggle('isOn', k===hi));
+        heroPaintDots();
+        heroReset();
+      }
+      function heroNextFn(){ heroGo(hi+1); }
+      function heroPrevFn(){ heroGo(hi-1); }
+
+      if(heroSlides && heroDots){
+        heroSlides.innerHTML = '';
+        heroDots.innerHTML = '';
+
+        hero.forEach((s,idx)=>{
+          const slide = document.createElement('div');
+          slide.className = 'heroSlide' + (idx===0 ? ' isOn':'' );
+          slide.innerHTML = `<img src="${s.img}" alt="${s.alt||''}" loading="${idx===0?'eager':'lazy'}">`;
+          heroSlides.appendChild(slide);
+
+          const dot = document.createElement('button');
+          dot.className = 'heroDot';
+          dot.type = 'button';
+          dot.setAttribute('aria-label','Go to hero slide ' + (idx+1));
+          dot.addEventListener('click',()=>heroGo(idx));
+          heroDots.appendChild(dot);
+        });
+
+        heroPaintDots();
+
+        function heroReset(){
+          if(!hAuto) return;
+          clearTimeout(hTimer);
+          hTimer = setTimeout(heroNextFn, hInterval);
+        }
+
+        if(heroPrev) heroPrev.addEventListener('click', heroPrevFn);
+        if(heroNext) heroNext.addEventListener('click', heroNextFn);
+
+        if(heroWrap){
+          heroWrap.addEventListener('mouseenter',()=>clearTimeout(hTimer));
+          heroWrap.addEventListener('mouseleave',heroReset);
+
+          let sx = 0;
+          heroWrap.addEventListener('touchstart',e=>{ sx=e.touches[0].clientX; clearTimeout(hTimer); },{passive:true});
+          heroWrap.addEventListener('touchend',e=>{
+            const dx = e.changedTouches[0].clientX - sx;
+            if(Math.abs(dx)>40){ dx<0 ? heroNextFn() : heroPrevFn(); }
+            heroReset();
+          },{passive:true});
+        }
+
+        heroReset();
+      }
+
+      /* =========================
+         KPI COUNT (OPTIONAL)
+         ========================= */
+      const runOnce = (() => {
+        let done=false;
+        return () => {
+          if(done) return; done=true;
+          root.querySelectorAll('.num[data-count]').forEach(el=>{
+            const target = +el.getAttribute('data-count') || 0;
+            if(!target) return;
+            let cur = 0;
+            const step = Math.max(1, Math.ceil(target/45));
+            const timer = setInterval(()=>{
+              cur += step;
+              if(cur >= target){ cur = target; clearInterval(timer); }
+              if(target >= 1000000){
+                const v = cur/1000000;
+                el.textContent = (v >= 1 ? v.toFixed(v < 2 ? 1 : 0) : v.toFixed(1)) + "M+";
+              } else if(target >= 1000){
+                el.textContent = cur.toLocaleString() + "+";
+              } else {
+                el.textContent = cur.toString();
+              }
+            }, 22);
+          });
+        };
+      })();
+
+      const io = ('IntersectionObserver' in window) ? new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ runOnce(); io.disconnect(); } });
+      }, {threshold:0.25}) : null;
+      if(io) io.observe(root); else runOnce();
+
+      /* =========================
+         BUILD LOGO WALL + BELT
+         ========================= */
+      const wall = root.querySelector('#brWall');
+      if(wall){
+        wall.innerHTML = '';
+        sponsors.forEach(s=>{
+          const a=document.createElement('a');
+          a.className='sTile';
+          a.href=s.site || '#';
+          const real = s.site && s.site !== '#';
+          if(real){ a.target='_blank'; a.rel='noopener'; }
+          a.innerHTML = `<img src="${s.img}" alt="${s.name}" loading="lazy"><span class="sName">${s.name}</span>`;
+          wall.appendChild(a);
+        });
+      }
+
+      const beltTrack = root.querySelector('#brBeltTrack');
+      const beltWrap  = root.querySelector('#brBelt');
+
+      if(beltTrack && beltWrap){
+        beltTrack.innerHTML = '';
+        const loop = sponsors.concat(sponsors);
+        loop.forEach(s=>{
+          const a=document.createElement('a');
+          a.className='beltTile';
+          a.href=s.site || '#';
+          const real = s.site && s.site !== '#';
+          if(real){ a.target='_blank'; a.rel='noopener'; }
+          a.innerHTML = `<img src="${s.img}" alt="${s.name}" loading="lazy">`;
+          beltTrack.appendChild(a);
+        });
+
+        let pos = 0;
+        const speed = 0.42;
+        let raf;
+
+        const step = () => {
+          pos -= speed;
+          const half = beltTrack.scrollWidth / 2;
+          if(Math.abs(pos) >= half) pos = 0;
+          beltTrack.style.transform = `translate3d(${pos}px,0,0)`;
+          raf = requestAnimationFrame(step);
+        };
+        raf = requestAnimationFrame(step);
+
+        const stop = () => cancelAnimationFrame(raf);
+        const start = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(step); };
+
+        beltWrap.addEventListener('mouseenter', stop);
+        beltWrap.addEventListener('mouseleave', start);
+        beltWrap.addEventListener('touchstart', stop, {passive:true});
+        beltWrap.addEventListener('touchend', start, {passive:true});
+      }
+
+      /* =========================
+         SPOTLIGHT BUILD + AUTOPLAY
+         ========================= */
+      const sTrack = root.querySelector('#spotTrack');
+      const sDots  = root.querySelector('#spotDots');
+      const sPrev  = root.querySelector('#spotPrev');
+      const sNext  = root.querySelector('#spotNext');
+      const sWrap  = root.querySelector('#brSpot');
+
+      if(sTrack && sDots && sPrev && sNext && sWrap){
+        sTrack.innerHTML = ''; sDots.innerHTML = '';
+
+        spotlight.forEach((s,idx)=>{
+          const slide=document.createElement('article');
+          slide.className='spot-slide';
+          slide.innerHTML = `
+            <div>
+              <span class="badge" style="margin-bottom:8px">${s.role}</span>
+              <h2 style="margin:0 0 8px" class="headline">${s.name}</h2>
+              <p class="sub">${s.copy}</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+                <a class="miniChip" href="${s.site}" target="_blank" rel="noopener">Website ↗</a>
+                <a class="miniChip" href="https://www.batrounrace.com/pages/contact">Become a Partner</a>
+              </div>
+            </div>
+            <figure class="visual"><img src="${s.img}" alt="${s.name}" loading="lazy"></figure>
+          `;
+          sTrack.appendChild(slide);
+
+          const dot=document.createElement('button');
+          dot.className='dot';
+          dot.type='button';
+          dot.setAttribute('aria-label','Go to slide ' + (idx+1));
+          dot.addEventListener('click',()=>go(idx));
+          sDots.appendChild(dot);
+        });
+
+        const auto = sWrap.getAttribute('data-autoplay') === 'true';
+        const interval = +sWrap.getAttribute('data-interval') || 3200;
+        let i=0, timer=null;
+
+        function paintDots(){ [...sDots.children].forEach((d,k)=>d.setAttribute('aria-current', k===i)); }
+        function go(n){
+          const len = sTrack.children.length || 1;
+          i = (n + len) % len;
+          sTrack.style.transform = `translateX(-${i*100}%)`;
+          paintDots();
+          reset();
+        }
+        function next(){ go(i+1); }
+        function prev(){ go(i-1); }
+
+        sNext.addEventListener('click', next);
+        sPrev.addEventListener('click', prev);
+
+        function reset(){
+          if(!auto) return;
+          clearTimeout(timer);
+          timer = setTimeout(next, interval);
+        }
+
+        sWrap.addEventListener('mouseenter',()=>clearTimeout(timer));
+        sWrap.addEventListener('mouseleave',reset);
+
+        let sx=0;
+        sTrack.addEventListener('touchstart',e=>{ sx=e.touches[0].clientX; clearTimeout(timer); },{passive:true});
+        sTrack.addEventListener('touchend',e=>{
+          const dx = e.changedTouches[0].clientX - sx;
+          if(Math.abs(dx)>40){ dx<0 ? next() : prev(); }
+          reset();
+        },{passive:true});
+
+        go(0);
+      }
+
+      /* =========================
+         HIGHLIGHTS AUTOPLAY
+         ========================= */
+      const hlWrap = root.querySelector('#brHighlights');
+      const hlTrack = root.querySelector('#hlTrack');
+      const hlPrev = root.querySelector('#hlPrev');
+      const hlNext = root.querySelector('#hlNext');
+
+      if(hlWrap && hlTrack && hlPrev && hlNext){
+        const interval = +hlWrap.getAttribute('data-interval') || 3600;
+        const autoplay = hlWrap.getAttribute('data-autoplay') === 'true';
+        let t=null;
+
+        const cardW = () => {
+          const first = hlTrack.querySelector('.slide');
+          return first ? first.getBoundingClientRect().width + 14 : 740;
+        };
+        const scrollByOne = (dir) => hlTrack.scrollBy({left:dir*cardW(), behavior:'smooth'});
+
+        hlPrev.addEventListener('click',()=>{ scrollByOne(-1); reset(); });
+        hlNext.addEventListener('click',()=>{ scrollByOne(1); reset(); });
+
+        const reset = () => {
+          if(!autoplay) return;
+          clearTimeout(t);
+          t = setTimeout(()=>{
+            const max = hlTrack.scrollWidth - hlTrack.clientWidth - 5;
+            if(hlTrack.scrollLeft >= max) hlTrack.scrollTo({left:0, behavior:'smooth'});
+            else scrollByOne(1);
+          }, interval);
+        };
+
+        hlWrap.addEventListener('mouseenter',()=>clearTimeout(t));
+        hlWrap.addEventListener('mouseleave',reset);
+
+        let sx=0;
+        hlTrack.addEventListener('touchstart',e=>{ sx=e.touches[0].clientX; clearTimeout(t); },{passive:true});
+        hlTrack.addEventListener('touchend',e=>{
+          const dx = e.changedTouches[0].clientX - sx;
+          if(Math.abs(dx) > 40) scrollByOne(dx<0 ? 1 : -1);
+          reset();
+        },{passive:true});
+
+        hlTrack.addEventListener('scroll', reset, {passive:true});
+        reset();
+      }
+
+      /* =========================
+         TABS SMOOTH SCROLL
+         ========================= */
+      const tabs = root.querySelectorAll('.tab');
+      tabs.forEach(t=>{
+        t.addEventListener('click',()=>{
+          tabs.forEach(x=>x.setAttribute('aria-selected','false'));
+          t.setAttribute('aria-selected','true');
+          const key = t.getAttribute('data-jump');
+          const target = root.querySelector('#brCat-' + key);
+          if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
+
+    })();
+  </script></section>
