@@ -1,0 +1,620 @@
+<style>
+  :root{
+    --bg1:#071a2b;
+    --bg2:#0b2740;
+    --panel:#0b2238;
+    --panel2:#123e6a;
+    --ink:#eaf6ff;
+    --muted:#b7d4ec;
+    --accent:#22c3ff;
+    --accent2:#6fe2ff;
+    --line:rgba(255,255,255,.12);
+    --shadow:0 16px 48px rgba(0,0,0,.42);
+    --r:22px;
+    --max:1260px;
+  }
+
+  /* FULL BLEED inside Shopify containers */
+  .br-fullbleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+  .br-page{
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1100px 800px at 10% -10%, #184469 0%, #0e2f50 35%, var(--bg1) 70%),
+      radial-gradient(900px 700px at 95% 10%, rgba(34,195,255,.16) 0%, rgba(34,195,255,0) 55%),
+      linear-gradient(180deg, var(--bg2), var(--bg1));
+  }
+  .br-wrap{max-width:var(--max); margin:auto; padding:28px 18px 60px}
+
+  /* Top bar */
+  .br-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+  .br-brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em}
+  .br-dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 0 8px rgba(34,195,255,.12)}
+  .br-nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .br-pill{
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.04);
+    padding:.45rem .75rem;border-radius:999px;
+    color:var(--muted);font-weight:700;font-size:14px;
+    transition:.18s ease;
+  }
+  .br-pill:hover{border-color:rgba(255,255,255,.25);color:var(--ink);transform:translateY(-1px)}
+
+  /* Hero */
+  .br-hero{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:calc(var(--r) + 6px);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    padding:26px 22px 22px;
+    background:linear-gradient(180deg, rgba(18,62,106,.92), rgba(11,34,56,.96));
+  }
+  .br-hero:before{
+    content:"";
+    position:absolute;inset:-140px -160px auto auto;
+    width:620px;height:620px;border-radius:999px;
+    background:radial-gradient(circle at 35% 30%, rgba(34,195,255,.42), rgba(34,195,255,0) 62%);
+    filter:blur(2px);
+  }
+  .br-hero:after{
+    content:"";
+    position:absolute;inset:auto auto -260px -280px;
+    width:820px;height:820px;border-radius:999px;
+    background:radial-gradient(circle at 35% 35%, rgba(111,226,255,.20), rgba(111,226,255,0) 66%);
+  }
+  .br-mesh{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:86px 86px;
+    mask-image:radial-gradient(circle at 42% 22%, rgba(0,0,0,1) 0%, rgba(0,0,0,.55) 42%, rgba(0,0,0,0) 72%);
+    opacity:.20;
+    pointer-events:none;
+  }
+
+  .br-badge{
+    display:inline-flex;align-items:center;gap:8px;width:max-content;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#032033;border-radius:999px;padding:.34rem .86rem;
+    font-weight:900;letter-spacing:.05em;box-shadow:0 12px 28px rgba(34,195,255,.14);
+  }
+  .br-title{position:relative;margin:14px 0 10px;font-size:clamp(34px,5.4vw,66px);line-height:1.02;letter-spacing:-.02em;text-shadow:0 2px 0 rgba(0,0,0,.25)}
+  .br-lead{position:relative;margin:0;max-width:980px;color:var(--muted);font-size:clamp(15px,1.25vw,18px);line-height:1.65}
+  .br-lead b{color:var(--ink)}
+  .br-highlight{color:var(--accent2);font-weight:900}
+
+  /* ✅ HERO BUTTONS */
+  .br-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .br-btn{
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.04);
+    color:var(--ink);
+    padding:.62rem .9rem;border-radius:16px;
+    font-weight:900;letter-spacing:.02em;
+    transition:.18s ease;
+    text-decoration:none;
+  }
+  .br-btn:hover{transform:translateY(-2px);border-color:rgba(34,195,255,.35);background:rgba(34,195,255,.10)}
+  .br-btn span{
+    width:18px;height:18px;border-radius:7px;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);
+    color:var(--muted);
+  }
+  .br-btn.primary{
+    border-color:rgba(34,195,255,.35);
+    background:linear-gradient(90deg, rgba(34,195,255,.18), rgba(111,226,255,.10));
+  }
+
+  /* Cards grid */
+  .br-grid{position:relative;margin-top:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+  .br-card{
+    background:linear-gradient(180deg, rgba(18,62,106,.78), rgba(11,34,56,.92));
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    padding:18px;
+    box-shadow:0 10px 28px rgba(0,0,0,.20);
+  }
+  .br-cardhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .br-cardhead b{color:var(--accent);font-weight:900}
+  .br-cardhead small{color:var(--muted);font-weight:700}
+
+  .br-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
+  .br-stat{border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:14px 14px;background:rgba(255,255,255,.03);transition:.18s ease}
+  .br-stat:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
+  .br-num{font-weight:900;font-size:24px;letter-spacing:.01em}
+  .br-lbl{margin-top:6px;color:var(--muted);font-weight:700;font-size:13px;line-height:1.35}
+  .br-note{margin:10px 0 0;color:var(--muted);font-weight:700;line-height:1.55}
+
+  .br-h2{margin:0 0 10px;font-size:clamp(20px,2.6vw,28px);color:#cfe7ff;letter-spacing:-.01em}
+  .br-list{margin:0;padding:0;list-style:none}
+  .br-list li{padding:.58rem 0;border-top:1px dashed rgba(255,255,255,.12);display:flex;gap:10px;align-items:flex-start}
+  .br-list li:first-child{border-top:0}
+  .br-check{width:18px;height:18px;border-radius:6px;display:grid;place-items:center;background:rgba(34,195,255,.12);border:1px solid rgba(34,195,255,.26);color:var(--accent2);font-weight:900;font-size:13px;flex:0 0 auto;margin-top:1px}
+
+  /* Partners */
+  .br-section{position:relative;margin-top:18px}
+  .br-partnerGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:12px}
+  .br-partner{
+    position:relative;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:rgba(255,255,255,.035);
+    padding:16px 14px 14px;min-height:92px;
+    display:flex;flex-direction:column;justify-content:center;gap:6px;
+    transition:.18s ease;overflow:hidden;text-decoration:none;color:inherit;
+  }
+  .br-partner:before{
+    content:"";position:absolute;inset:-40px -70px auto auto;width:170px;height:170px;border-radius:999px;
+    background:radial-gradient(circle at 35% 35%, rgba(34,195,255,.18), rgba(34,195,255,0) 65%);opacity:.9;pointer-events:none;
+  }
+  .br-partner:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.26);background:rgba(255,255,255,.055);box-shadow:0 18px 44px rgba(0,0,0,.28)}
+  .br-partner .nm{font-weight:900;line-height:1.1;font-size:15px}
+  .br-partner .tg{color:var(--muted);font-weight:800;font-size:12px}
+
+  .br-linkMark{
+    position:absolute; right:12px; top:12px;width:30px;height:30px;border-radius:12px;
+    display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);color:var(--muted);transition:.18s ease;
+  }
+  .br-partner:hover .br-linkMark{color:var(--ink);border-color:rgba(34,195,255,.35);background:rgba(34,195,255,.10)}
+
+  /* Featured partners */
+  .br-featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+  .br-feature{
+    border:1px solid rgba(255,255,255,.14);border-radius:22px;
+    background:linear-gradient(180deg, rgba(18,62,106,.70), rgba(11,34,56,.92));
+    padding:18px 16px;box-shadow:0 10px 28px rgba(0,0,0,.20);
+    transition:.18s ease;position:relative;overflow:hidden;text-decoration:none;color:inherit;
+  }
+  .br-feature:before{
+    content:"";position:absolute; inset:-60px auto auto -60px;width:220px;height:220px;border-radius:999px;
+    background:radial-gradient(circle at 35% 35%, rgba(111,226,255,.18), rgba(111,226,255,0) 66%);
+  }
+  .br-feature:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.26)}
+  .br-feature .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .br-feature .role{color:var(--accent2);font-weight:900;font-size:13px;letter-spacing:.03em}
+  .br-feature .name{font-weight:900;font-size:18px;margin-top:8px}
+  .br-feature .desc{color:var(--muted);font-weight:700;line-height:1.55;margin-top:8px}
+  .br-feature .cta{
+    margin-top:12px;display:inline-flex;align-items:center;gap:10px;font-weight:900;
+    border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);
+    padding:.55rem .8rem;border-radius:14px;transition:.18s ease;width:max-content;
+  }
+  .br-feature:hover .cta{border-color:rgba(34,195,255,.35);background:rgba(34,195,255,.10)}
+  .br-feature .cta span{
+    width:18px;height:18px;border-radius:7px;display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:var(--muted);
+  }
+
+  /* Podium — ✅ ALL PHOTOS SAME SIZE */
+  .br-podiumWrap{margin-top:18px}
+  .podium{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;align-items:stretch;margin:16px 0}
+
+  .photo{
+    background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
+    height:520px; /* ✅ fixed */
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  .info{
+    background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border:1px solid var(--line); border-radius:16px; padding:18px 18px 14px;
+    box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:center;
+    height:520px; /* ✅ match photo */
+  }
+
+  .kicker{font-weight:900;color:var(--accent);font-size:clamp(18px,2.2vw,26px);line-height:1.1;margin:0}
+  .kicker small{font-weight:700;color:#a9cff2}
+  .podTitle{font-size:clamp(22px,3.6vw,34px);line-height:1.1;margin:.35rem 0 .6rem;color:#cfe7ff}
+  .podList{margin:.25rem 0 0;padding:0;list-style:none}
+  .podList li{padding:.46rem 0;border-top:1px dashed var(--line);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+  .podList li:first-child{border-top:0}
+  .podList li b{font-weight:900}
+  .podList li span{color:var(--ink);opacity:.95}
+  .club{color:var(--muted)}
+  .no-photo{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line); border-radius:16px;padding:18px; box-shadow:var(--shadow); margin:16px 0}
+
+  /* Responsive */
+  @media (max-width:1020px){
+    .br-grid{grid-template-columns:1fr}
+    .br-featured{grid-template-columns:1fr}
+    .br-partnerGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .podium{grid-template-columns:1fr;gap:10px}
+    .photo,.info{height:auto}
+    .photo{height:min(62vh,520px)}
+  }
+  @media (max-width:560px){
+    .br-wrap{padding:18px 12px 34px}
+    .br-partnerGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .br-stats{grid-template-columns:1fr}
+    .photo{height:min(56vh,440px)}
+    .info,.no-photo{padding:16px 14px}
+  }
+</style>
+<div class="br-fullbleed br-page">
+<div class="br-wrap">
+<div class="br-top">
+<div class="br-brand">
+<span class="br-dot"></span><span>Batroun Race</span>
+</div>
+<div class="br-nav">
+<a class="br-pill" href="#partners">Partners</a> <a class="br-pill" href="#podium">Podium Winners</a>
+</div>
+</div>
+<section class="br-hero" aria-label="Sponsors &amp; Partners">
+<div class="br-mesh"><br></div>
+<div class="br-mesh"></div>
+<span class="br-badge">Sponsors &amp; Partners</span>
+<h1 class="br-title"></h1>
+<h1 class="br-title">Measurable Impact.</h1>
+<p> </p>
+<p class="br-lead">A flagship seaside race uniting locals, expats, and visitors. We put your brand <b>on the route</b>, <b>on the screen</b>, and <b>in the recap reels</b> — then share a transparent <span class="br-highlight">ROI snapshot</span> so you can measure real performance.</p>
+<p class="br-lead"> </p>
+<!-- ✅ Buttons (you asked to integrate them) -->
+<div class="br-actions">
+<a href="#partners" class="br-btn primary"><span>↓</span> View Partners</a> <a href="#podium" class="br-btn"><span>🏁</span> View Podium Winners</a>
+</div>
+<div class="br-grid">
+<div class="br-card">
+<div class="br-cardhead"><b>Event Reach</b></div>
+<div class="br-cardhead"> <small>estimated total impact</small>
+</div>
+<div class="br-stats">
+<div class="br-stat">
+<div class="br-num">5,000+</div>
+<div class="br-lbl">Runners &amp; spectators</div>
+</div>
+<div class="br-stat">
+<div class="br-num">2,500,000+</div>
+<div class="br-lbl">Digital impressions (est.)</div>
+</div>
+<div class="br-stat">
+<div class="br-num">3,000</div>
+<div class="br-lbl">Flyers — Souks &amp; seafront (3 weekends)</div>
+</div>
+<div class="br-stat">
+<div class="br-num">75+</div>
+<div class="br-lbl">Press &amp; creator mentions</div>
+</div>
+</div>
+<p class="br-note">Attribution included: <b>UTM links</b>, <b>QR codes</b>, redemptions, and post-event metrics (CPR • CPC • CTR).</p>
+<p class="br-note"> </p>
+</div>
+<div class="br-card">
+<h2 class="br-h2">Why Batroun Works</h2>
+<p> </p>
+<ul class="br-list">
+<li>
+<span class="br-check">✓</span><span><b>Tourism + Wellness:</b> weekend footfall drives organic sampling + visibility.</span>
+</li>
+<li>
+<span class="br-check">✓</span><span><b>Creator Flywheel:</b> coastal reels outperform static ads; tags ride earned reach.</span>
+</li>
+<li>
+<span class="br-check">✓</span><span><b>Community Retention:</b> alumni bring friends → lower CAC, higher LTV.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- ✅ Featured Partners (REAL links) -->
+<div class="br-section">
+<h2 class="br-h2"></h2>
+<h2 class="br-h2"></h2>
+<h2 class="br-h2"></h2>
+<h2 class="br-h2">Featured Partners</h2>
+<p> </p>
+<p class="br-note">High-visibility partners with trackable placements and reporting.</p>
+<p class="br-note"> </p>
+<p class="br-note"> </p>
+<div class="br-featured">
+<a rel="noopener" href="https://www.aquafina.com/en-US/" class="br-feature" target="_blank">
+<div class="top">
+<div class="role">Hydration Partner</div>
+<div class="role"></div>
+<div aria-hidden="true" class="br-linkMark">↗</div>
+</div>
+<div class="name">Aquafina</div>
+<div class="desc">Cooling stations across the course for athlete safety and repeated logo exposure.</div>
+<div class="cta">
+<span>↗</span> Visit website</div>
+</a><a rel="noopener" href="https://www.gatorade.com" class="br-feature" target="_blank">
+<div class="top">
+<div class="role">Electrolyte Partner</div>
+<div aria-hidden="true" class="br-linkMark">↗</div>
+</div>
+<div class="name">Gatorade</div>
+<div class="desc">Key stations + recovery moments paired with creator tags and measurable traffic.</div>
+<div class="cta">
+<span>↗</span> Visit website</div>
+</a><a rel="noopener" href="https://whishmoneylebanon.com/" class="br-feature" target="_blank">
+<div class="top">
+<div class="role">Payments Partner</div>
+<div aria-hidden="true" class="br-linkMark">↗</div>
+</div>
+<div class="name">Whish Money</div>
+<div class="desc">Registration and on-site payments with measurable attribution for reporting.</div>
+<div class="cta">
+<span>↗</span> Visit website</div>
+</a>
+</div>
+</div>
+<!-- ✅ Brand Partners (ALL your links, none missing) -->
+<div id="partners" class="br-section">
+<h2 class="br-h2"></h2>
+<h2 class="br-h2">Brand Partners</h2>
+<p> </p>
+<p class="br-note">Each tile is clickable. (Footlab has no external link.)</p>
+<p class="br-note"> </p>
+<div class="br-partnerGrid">
+<a rel="noopener" href="https://www.aquafina.com/en-US/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Aquafina</div>
+<div class="tg">Hydration Partner</div>
+</a><a rel="noopener" href="https://www.gatorade.com" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Gatorade</div>
+<div class="tg">Electrolyte Partner</div>
+</a><a rel="noopener" href="https://newbeirut.com/local-businesses/xxl-energy-lebanon/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">XXL Energy</div>
+<div class="tg">Energy Partner</div>
+</a><a rel="noopener" href="https://whishmoneylebanon.com/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Whish Money</div>
+<div class="tg">Payments Partner</div>
+</a>
+<div aria-label="Footlab (no external link)" style="cursor: default;" class="br-partner">
+<div style="opacity: .35;" class="br-linkMark">•</div>
+<div class="nm">Footlab</div>
+<div class="tg">Retail Partner (no link)</div>
+</div>
+<a rel="noopener" href="https://www.lebtivity.com" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Lebtivity</div>
+<div class="tg">Media Partner</div>
+</a><a rel="noopener" href="https://merk-me.com/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Merk</div>
+<div class="tg">Lifestyle Partner</div>
+</a><a rel="noopener" href="https://www.aqualandbatroun.com/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Aqualand Batroun</div>
+<div class="tg">Experience Partner</div>
+</a><a rel="noopener" href="https://gobatroun.com/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Go Batroun</div>
+<div class="tg">Destination Partner</div>
+</a><a rel="noopener" href="https://gobatroun.com/location/routes-bike-rental/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Routes Bike Rental</div>
+<div class="tg">Mobility Partner</div>
+</a><a rel="noopener" href="https://alkhachanagency.com/pages/pages-marketing-agency-middle-east-al-khachan" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Al Khachan Agency</div>
+<div class="tg">Marketing Partner</div>
+</a><a rel="noopener" href="https://caritas.org.lb/youth/?uwc=lb" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Caritas Youth</div>
+<div class="tg">Community Partner</div>
+</a><a rel="noopener" href="https://www.hallab.com.lb/?uwc=lb" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Hallab</div>
+<div class="tg">Food Partner</div>
+</a><a rel="noopener" href="https://blubaybatroun.com/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Blu Bay Batroun</div>
+<div class="tg">Venue Partner</div>
+</a><a rel="noopener" href="https://gobatroun.com/location/studio-jammal-s-a-r-l/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Studio Jammal</div>
+<div class="tg">Fitness Partner</div>
+</a><a rel="noopener" href="http://batrounmountains.wine/" class="br-partner" target="_blank">
+<div class="br-linkMark">↗</div>
+<div class="nm">Batroun Mountains</div>
+<div class="tg">Community Partner</div>
+</a>
+</div>
+</div>
+</section>
+<!-- ✅ PODIUM (your full content preserved, photos same size) -->
+<section aria-label="Podium Winners" class="br-podiumWrap" id="podium"><span class="br-badge">Batroun Race 2025</span>
+<h2 style="margin-top: 12px;" class="br-h2">Podium Winners — Final List</h2>
+<p class="br-note">Photos show only where available; otherwise the block keeps a clean navy background.</p>
+<!-- 70/74 • MEN — no photo -->
+<section aria-label="70/74M" class="no-photo">
+<div class="kicker">70/74 <small>Category</small>
+</div>
+<div class="podTitle">Men</div>
+<ul class="podList">
+<li>
+<b>Antoine Al Khazen</b> <span>· 73 · <span class="club">Interlebanon</span></span>
+</li>
+</ul>
+</section>
+<!-- 20/34 • WOMEN — with photo -->
+<section aria-label="20/34F" class="podium">
+<figure class="photo"><img alt="20/34F podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_women_age_20_34n.jpg?v=1762369137"></figure>
+<div class="info">
+<div class="kicker">20/34 <small>Category</small>
+</div>
+<div class="podTitle">Females (20/34F)</div>
+<ul class="podList">
+<li>
+<b>Serena Hayek</b> <span>· 24 · <span class="club">Inter Lebanon</span></span>
+</li>
+<li>
+<b>Crystelle Abou Jneid</b> <span>· 27 · <span class="club">Let’s Run</span></span>
+</li>
+<li>
+<b>Aya Wehbe</b> <span>· 27 · <span class="club">The Crew</span></span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 60/64 • WOMEN — with photo -->
+<section aria-label="60/64F" class="podium">
+<figure class="photo"><img alt="60/64F podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_women_60_64.jpg?v=1762368324"></figure>
+<div class="info">
+<div class="kicker">60/64 <small>Category</small>
+</div>
+<div class="podTitle">Females (60/64F)</div>
+<ul class="podList">
+<li>
+<b>Rafca Mahfouz</b> <span>· 62 · <span class="club">Forties Tigris</span></span>
+</li>
+<li>
+<b>Jiana Saad</b> <span>· 60 · <span class="club">Fortis Tigris</span></span>
+</li>
+<li>
+<b>Myrna Khayat</b> <span>· 61 · <span class="club">Elite</span></span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 55/59 • MEN — with photo -->
+<section aria-label="55/59M" class="podium">
+<div class="info">
+<div class="kicker">55/59 <small>Category</small>
+</div>
+<div class="podTitle">Males (55/59M)</div>
+<ul class="podList">
+<li>
+<b>Mario Saradar</b> <span>· 57 · <span class="club">Let’s Run</span></span>
+</li>
+<li>
+<b>Raymond Semaan</b> <span>· 59 · <span class="club">Elite Running Club</span></span>
+</li>
+<li>
+<b>Nassib Haddad</b> <span>· 55 · <span class="club">Fortis Tigris</span></span>
+</li>
+</ul>
+</div>
+<figure class="photo"><img alt="55/59M podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_man_age_55_59.jpg?v=1762367649"></figure>
+</section>
+<!-- 45/49 • WOMEN — with photo -->
+<section aria-label="45/49F" class="podium">
+<figure class="photo"><img alt="45/49F podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_women_age_45_49.jpg?v=1762367743"></figure>
+<div class="info">
+<div class="kicker">45/49 <small>Category</small>
+</div>
+<div class="podTitle">Females (45/49F)</div>
+<ul class="podList">
+<li>
+<b>Jessy Haddad</b> <span>· 46 · <span class="club">Let’s Run</span></span>
+</li>
+<li>
+<b>Mireille Chidiac</b> <span>· 46 · <span class="club">Fortis Tigris</span></span>
+</li>
+<li>
+<b>Cosette Atallah</b> <span>· 45 · <span class="club">Antonines</span></span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 20/34 • MEN — no photo -->
+<section aria-label="20/34M" class="no-photo">
+<div class="kicker">20/34 <small>Category</small>
+</div>
+<div class="podTitle">Men (20/34M)</div>
+<ul class="podList">
+<li>
+<b>Ali Kenaan</b> <span>· 22 · <span class="club">Army</span></span>
+</li>
+<li>
+<b>Zayd Al Sayed</b> <span>· 23 · <span class="club">Let’s Run</span></span>
+</li>
+<li>
+<b>Charbel Sejjaam</b> <span>· 24 · <span class="club">Interlebanon</span></span>
+</li>
+</ul>
+</section>
+<!-- 17/19 • WOMEN — with photo -->
+<section aria-label="17/19F" class="podium">
+<figure class="photo"><img alt="17/19F podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_women_17_19.jpg?v=1762368214"></figure>
+<div class="info">
+<div class="kicker">17/19 <small>Category</small>
+</div>
+<div class="podTitle">Females (17/19F)</div>
+<ul class="podList">
+<li>
+<b>Rhea Bassil</b> <span>· 19 · —</span>
+</li>
+<li>
+<b>Gaelle Lefebure</b> <span>· 18 · —</span>
+</li>
+<li>
+<b>Rhea Haddad</b> <span>· 18 · —</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 14/16 • MEN — with photo -->
+<section aria-label="14/16M" class="podium">
+<figure class="photo"><img alt="14/16M podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_man_14_16.jpg?v=1762369399"></figure>
+<div class="info">
+<div class="kicker">14/16 <small>Category</small>
+</div>
+<div class="podTitle">Males (14/16M)</div>
+<ul class="podList">
+<li>
+<b>Marlon Soudid</b> <span>· 14 · <span class="club">Batroun Starts</span></span>
+</li>
+<li>
+<b>Charbel Hanna</b> <span>· 15 · <span class="club">Team Tony</span></span>
+</li>
+<li>
+<b>Amer El Bawab</b> <span>· 14 · <span class="club">Inter Lebanon</span></span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 14/16 • WOMEN — with photo -->
+<section aria-label="14/16F" class="podium">
+<figure class="photo"><img alt="14/16F podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_women_age_14_16.jpg?v=1762369177"></figure>
+<div class="info">
+<div class="kicker">14/16 <small>Category</small>
+</div>
+<div class="podTitle">Females (14/16F)</div>
+<ul class="podList">
+<li>
+<b>Carine Al Bawab</b> <span>· 14 · <span class="club">Inter Lebanon</span></span>
+</li>
+<li>
+<b>Farah McElray</b> <span>· 15 · <span class="club">Club Antonins</span></span>
+</li>
+<li>
+<b>Yara Bassil</b> <span>· 14 · —</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- 40/44 • MEN — with photo -->
+<section aria-label="40/44M" class="podium">
+<figure class="photo"><img alt="40/44M podium" src="https://cdn.shopify.com/s/files/1/0770/7790/5662/files/podium_man_age_40_44.jpg?v=1762368026"></figure>
+<div class="info">
+<div class="kicker">40/44 <small>Category</small>
+</div>
+<div class="podTitle">Males (40/44M)</div>
+<ul class="podList">
+<li>
+<b>Tony Hanna</b> <span>· 40 · <span class="club">Team Hanna</span></span>
+</li>
+<li>
+<b>Charbel Bader</b> <span>· 40 · <span class="club">Elite Running Club</span></span>
+</li>
+<li>
+<b>Charbel Sammour</b> <span>· 41 · <span class="club">Batroun Starts</span></span>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</div>
+</div>
+<!-- ✅ Shopify width override -->
+<style>
+  main, #MainContent, .page-width { overflow: visible !important; }
+</style>
